@@ -5,12 +5,17 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit</title>
-    <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/assets/css/global.css" />
+
+    <!-- Components -->
+    <script type="module" src="./src/01-basic/hello-world/HelloWorld.js"></script>
+    
   </head>
   <body>
-    <my-element>
-      <h1>Vite + Lit</h1>
-    </my-element>
+    <main id="root"></main>
+    <hello-world></hello-world>
+    <script type="module" src="./src/index.js"></script>
   </body>
 </html>
