@@ -18,9 +18,9 @@ export class NavDesktopHorizontalBasic01 extends LitElement {
             </div>
 
             <div class="nav__m">
-                <ul class='nav__m-ul'><a class='nav__m-a'>Home</a></ul>
-                <ul class='nav__m-ul'><a class='nav__m-a'>About As</a></ul>
-                <ul class='nav__m-ul'><a class='nav__m-a'>Services</a></ul>
+                <ul class='nav__m-ul'><a class='nav__m-a' href="../../../index.html">Home</a></ul>
+                <ul class='nav__m-ul'><a class='nav__m-a' href="../../../pages/calculator01.html">About As</a></ul>
+                <ul class='nav__m-ul'><a class='nav__m-a'>developers</a></ul>
             </div>
         </nav>
     `
@@ -29,6 +29,10 @@ export class NavDesktopHorizontalBasic01 extends LitElement {
   static styles = css`
     :host {
         display: block;
+    }
+
+    a {
+        text-decoration: none;
     }
 
     .nav {
@@ -41,7 +45,7 @@ export class NavDesktopHorizontalBasic01 extends LitElement {
     }
 
     .nav__t {
-        color: #424242;
+        color: #1E88E5;
     }
 
     .nav__m {

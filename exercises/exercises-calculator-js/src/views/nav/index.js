@@ -6,13 +6,14 @@ import './NavDesktopHorizontalBasic01.js'
 import './NavMobileHorizontalBasic01.js'
 
 export class NavHorizontalBasic01 extends LitElement {
-  static properties = {}
+  static properties = {
+    state01: { type: Number }
+  }
 
-  /*
   constructor () {
     super()
+    this.state01 = 0
   }
-  */
 
   render () {
     if (screen.width > 768) {
