@@ -1,6 +1,10 @@
 
 import { html, css, LitElement } from 'lit'
 
+// Components Advanced
+import './Calculator01.js'
+import './Information.js'
+
 export class IndexCalculator01 extends LitElement {
   static properties = {
     state01: { type: Number }
@@ -14,7 +18,14 @@ export class IndexCalculator01 extends LitElement {
   render () {
     return html`
         <section class='section'>
-            Section Calculator 01
+          <div class='section__h'>
+            <h2>CALCULATOR 01</h2>
+          </div>  
+          
+          <div class='section__b'>
+            <calculator-01></calculator-01>
+            <card-information></card-information>
+          </div>
         </section>
     `
   }
@@ -29,6 +40,16 @@ export class IndexCalculator01 extends LitElement {
     .section {
         display: grid;
         justify-content: center;
+    }
+
+    .section__h {
+      display: grid;
+      justify-content: center;
+      color: #424242;
+    }
+
+    .section__b {
+      justify-content: center;
     }
   `
 }

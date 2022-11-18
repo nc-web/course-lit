@@ -18,9 +18,8 @@ export class NavDesktopHorizontalBasic01 extends LitElement {
             </div>
 
             <div class="nav__m">
-                <ul class='nav__m-ul'><a class='nav__m-a' href="../../../index.html">Home</a></ul>
-                <ul class='nav__m-ul'><a class='nav__m-a' href="../../../pages/calculator01.html">About As</a></ul>
-                <ul class='nav__m-ul'><a class='nav__m-a'>developers</a></ul>
+                <ul class='nav__m-ul'><a href="../../../index.html" class='nav__m-a'> Home </a></ul>
+                <ul class='nav__m-ul'><a href='../../../pages/developers.html' class='nav__m-a' >Developers</a></ul>
             </div>
         </nav>
     `

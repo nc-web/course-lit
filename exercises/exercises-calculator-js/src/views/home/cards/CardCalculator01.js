@@ -13,7 +13,7 @@ export class CardCalculator01 extends LitElement {
 
   render () {
     return html`
-            <a href='#' >
+            <a href='../../../../pages/calculator01.html' >
                 <article class='card'>
                     <div class='card__h'>
                         <svg style="width:60px; height:60px" viewBox="0 0 24 24">
