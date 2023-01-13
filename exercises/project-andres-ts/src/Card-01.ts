@@ -1,9 +1,11 @@
 
 import { LitElement, html, css } from 'lit'
+import { customElement } from 'lit/decorators.js'
 
 // Images
 import AmericanCap from '/cap.webp'
 
+@customElement('card-01')
 export class Card01 extends LitElement {
 
     render() {
@@ -108,5 +110,3 @@ export class Card01 extends LitElement {
         
     `
 }
-
-customElements.define('card-01', Card01)
