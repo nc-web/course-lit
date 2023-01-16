@@ -10,11 +10,11 @@ import CSS3 from '/img/css3.png'
 import JS from '/img/javascript.png'
 import React from '/img/react.png'
 
-export class HeaderDesktop extends LitElement {
+export class StudiesDesktop extends LitElement {
 
     render() {
         return html`
-            <section class='section' id='section-header'>
+            <section class='section' id='section-studies'>
                 <div class='section__cards'>
                     <div class='section__cards-01'>
                         <img class='section__cards-01-img' src=${HTML5}/>
@@ -86,4 +86,4 @@ export class HeaderDesktop extends LitElement {
     `
 }
 
-customElements.define('header-desktop', HeaderDesktop)
+customElements.define('studies-desktop', StudiesDesktop)

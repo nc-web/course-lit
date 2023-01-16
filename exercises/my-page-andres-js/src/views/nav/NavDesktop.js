@@ -36,8 +36,8 @@ export class NavDesktop extends LitElement {
                         </a></li></ul>
                     </div>
                     <div class='nav__menu-bottom'>
-                        <ul class='nav__menu-bottom-ul'><li class='nav__menu-bottom-li'><a class='nav__menu-bottom-a'>Home</a></li></ul>
-                        <ul class='nav__menu-bottom-ul'><li class='nav__menu-bottom-li'><a class='nav__menu-bottom-a'>Studies</a></li></ul>
+                        <ul class='nav__menu-bottom-ul'><li class='nav__menu-bottom-li'><a class='nav__menu-bottom-a' href='#section-header'>Home</a></li></ul>
+                        <ul class='nav__menu-bottom-ul'><li class='nav__menu-bottom-li'><a class='nav__menu-bottom-a' href='#section-studies'>Studies</a></li></ul>
                         <ul class='nav__menu-bottom-ul'><li class='nav__menu-bottom-li'><a class='nav__menu-bottom-a'>Tecnolgies</a></li></ul>
                         <ul class='nav__menu-bottom-ul'><li class='nav__menu-bottom-li'><a class='nav__menu-bottom-a'>Projects</a></li></ul>
                         <ul class='nav__menu-bottom-ul'><li class='nav__menu-bottom-li'><a class='nav__menu-bottom-a'>Contact Us</a></li></ul>
