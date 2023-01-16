@@ -1,9 +1,11 @@
 
-import { LitElement, html, css } from 'lit'
-
-// Images
+import { LitElement, html, css  } from 'lit'
+import { customElement } from 'lit/decorators.js'
+ 
+// Image
 import Profile from '/lit.webp'
 
+@customElement('card-horizontal-01')
 export class CardHorizontal01 extends LitElement {
     render() {
         return html`
@@ -151,5 +153,3 @@ export class CardHorizontal01 extends LitElement {
         }
     `
 }
-
-customElements.define('card-horizontal-01', CardHorizontal01)
