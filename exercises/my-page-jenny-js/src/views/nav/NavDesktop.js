@@ -8,8 +8,6 @@ export class NavDesktop extends LitElement {
     render() {
         return html`
             <nav class='nav'>
-
-
                 <div class='nav__logo'>
                     <img class='nav__logo-img' src=${LogoNC} />
                     <h4 class='nav__logo-title'> Jenny Gómez </h4>
