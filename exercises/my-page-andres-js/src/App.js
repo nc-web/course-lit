@@ -12,7 +12,7 @@ export class App extends LitElement {
         return html`
             <index-nav></index-nav>
             <index-header id='section-header'></index-header>
-            <!-- <index-studies id='section-studies'></index-studies> -->
+            <index-studies id='section-studies'></index-studies>
         `
     }
 
