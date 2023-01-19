@@ -2,7 +2,7 @@
 import { LitElement, html, css } from 'lit'
 
 // Components Base
-import '../components/buttons/buttons-basic/ButtonBasic01.js'
+import '../components/buttons/basic-buttons/ButtonBasic01.js'
 
 // Images
 import AmericanCap from '/cap.webp'

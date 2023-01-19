@@ -2,7 +2,6 @@
 import { LitElement, html, css } from 'lit'
 
 export class ButtonBasic01 extends LitElement {
-
     render() {
         return html`
             <button><slot></slot></button>
@@ -12,26 +11,28 @@ export class ButtonBasic01 extends LitElement {
     static styles = css`
         :host {
             display: inline-block;
-            margin: 0;
+            margin: 1rem;
             padding: 0;
         }
 
+
         button {
-            padding: .3rem .5rem;
-            border-radius: .5rem;
-            border-style: none;
+            font-size: .6rem;
+            padding: .2rem .9rem .1rem .9rem;
+            border: none;
             cursor: pointer;
-            color: #FFFFFF;
-            background-color: #9E9E9E;
-            transition: .3s;
+            background-color: #BDBDBD;
+            color: #424242;
+            outline: none;
+            transition: .2s;
+
         }
 
         button:hover {
-            background-color: #2196F3;
+            background-color: #03A9F4;
         }
-
-
     `
+
 }
 
 customElements.define('button-basic-01', ButtonBasic01)
