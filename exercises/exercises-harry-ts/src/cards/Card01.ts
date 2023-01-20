@@ -1,9 +1,13 @@
-import { LitElement, html, css} from 'lit'
+
+import { LitElement, html, css } from 'lit';
+import { customElement } from 'lit/decorators.js'
 
 //imag//
 import Lit from '/foto.png'
 
-export class Card02 extends LitElement {
+
+@customElement('card-01')
+export class Card01 extends LitElement {
     render() {
         return html`
         <article class="card">
@@ -97,7 +101,4 @@ export class Card02 extends LitElement {
     }
     `
 
-
 }
-
-customElements.define('card-01', Card02)
