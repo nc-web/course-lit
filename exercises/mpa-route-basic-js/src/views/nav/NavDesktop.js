@@ -1,6 +1,7 @@
 
 import { LitElement, html, css } from 'lit'
 
+// Images
 import Logo from '/img/logo128.png'
 
 export class NavDesktop extends LitElement {
