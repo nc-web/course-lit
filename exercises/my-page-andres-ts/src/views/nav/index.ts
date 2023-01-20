@@ -2,6 +2,10 @@
 import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators' 
 
+// Components
+import './NavDesktop.ts'
+import './NavMobile.ts'
+
 @customElement('index-nav')
 export class IndexNav extends LitElement {
 
