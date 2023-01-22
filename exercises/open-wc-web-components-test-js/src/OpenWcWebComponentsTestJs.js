@@ -5,14 +5,6 @@ const LogoNC = new URL('./assets/logo128.png', import.meta.url).href;
 const Cap = new URL('./assets/cap.webp', import.meta.url).href;
 
 export class OpenWcWebComponentsTestJs extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-      padding: 25px;
-      color: var(--open-wc-web-components-test-js-text-color, #000);
-    }
-  `;
-
   static properties = {
     header: { type: String },
     counter: { type: Number },
@@ -30,17 +22,45 @@ export class OpenWcWebComponentsTestJs extends LitElement {
 
   render() {
     return html`
-      <div>
-        <img src=${logo} alt="open-wc logo" />
-      </div>
-      <div>
-        <img src=${LogoNC} alt="Logo NC" />
-      </div>
-      <div>
-        <img src=${Cap} alt="Capitan America" />
-      </div>
-      <h2>${this.header} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
+      <slot></slot>
+      <main>
+        <slot>
+          <div>
+            <img src=${logo} alt="open-wc logo" />
+          </div>
+          <div>
+            <img src=${LogoNC} alt="Logo NC" />
+          </div>
+          <div>
+            <img src=${Cap} alt="Capitan America" />
+          </div>
+          <h2>${this.header} Nr. ${this.counter}!</h2>
+          <p>Hello World</p>
+          <button @click=${this.__increment}>increment</button>
+        </slot>
+      </main>
     `;
   }
+
+  static styles = css`
+    :host {
+      display: block;
+      margin: 0;
+      padding: 0;
+
+      ::slotted(*) {
+        font-family: Roboto;
+        background-color: aquamarine;
+      }
+
+      ::slotted(p) {
+        color: blue;
+      }
+
+      main ::slotted(*) {
+        color: red;
+        background-color: aquamarine;
+      }
+    }
+  `;
 }
