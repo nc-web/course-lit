@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators'
 
 // Images
 import Logo from '/img/logo128.png'
