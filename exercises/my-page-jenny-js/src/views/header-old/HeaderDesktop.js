@@ -4,7 +4,7 @@ import { LitElement, html, css } from 'lit'
 // Components 
 import './cards/Card-01.js'
 
-// Img
+// Images 
 import HTML5 from '/img/html5.png'
 import CSS from '/img/css3.png'
 import JS from '/img/javascript.png'
@@ -13,14 +13,14 @@ import REACT from '/img/react.png'
 export class HeaderDesktop extends LitElement {
     render() {
         return html`
-            <section class='section'>
+           <section class='section'>
                 <div class='section__cards'>
                     <div class='section__cards-01'>
-                        <img class='section__cards-01-img' src=${HTML5}>
+                            <img class='section__cards-01-img' src=${HTML5} />
                     </div>
 
-                    <div class='section__cards-02-img'>
-                        <img class='section__cards-02-img' src=${CSS}>
+                    <div class='section__cards-02'>
+                        <img class='section__cards-02-img' src=${CSS}/>
                     </div>
 
                     <div class='section__cards-03'>
@@ -28,14 +28,15 @@ export class HeaderDesktop extends LitElement {
                     </div>
 
                     <div class='section__cards-04'>
-                        <img class='section__cards-04-img' src=${JS}>
+                        <img class='section__cards-03-img' src=${JS}/>
                     </div>
 
                     <div class='section__cards-05'>
-                        <img class='section__cards-05-img' src=${REACT}>
+                        <img class='section__cards-04-img' src=${REACT}/>
                     </div>
+                    
                 </div>
-            </section>
+           </section>
         `
     }
 
@@ -53,14 +54,14 @@ export class HeaderDesktop extends LitElement {
         }
 
         .section__cards {
-            display:flex;
+            display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
-            top: 28rem;
-            left: 0;
             gap: 2rem;
-            
+            top: 28rem;
+            left: 0rem;
+            //filter: blur(1px);
         }
 
         .section__cards-01-img {
@@ -73,16 +74,15 @@ export class HeaderDesktop extends LitElement {
             height: 10rem;
         }
 
+        .section__cards-03-img {
+            width: 10rem;
+            height: 10rem;
+        }
+
         .section__cards-04-img {
             width: 10rem;
             height: 10rem;
         }
-
-        .section__cards-05-img {
-            width: 10rem;
-            height: 10rem;
-        }
-
     `
 }
 

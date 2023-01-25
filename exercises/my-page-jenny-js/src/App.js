@@ -10,7 +10,7 @@ export class App extends LitElement {
         return html`
        <index-nav></index-nav>
        <index-header> </index-header>
-        `
+    `
     }
 
     static styles = css`
