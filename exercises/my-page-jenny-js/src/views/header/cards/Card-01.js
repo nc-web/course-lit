@@ -113,13 +113,6 @@ export class Card01 extends LitElement {
         .card__header-containertext-icon-04 {
             cursor: pointer;
         }
-
-
-
-        
-
-
-
         
     `
 }
