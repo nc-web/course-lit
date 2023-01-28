@@ -1,21 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Lit + TS</title>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./src/assets/css/global-styles.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
 
-    <!-- Components -->
-    <script type="module" src="/src/my-element.ts"></script>
-    <script type="module" src="./src/cards/Card-01.ts"></script>
-    <script type="module" src="./src/cards/CardHorizontal01.ts"></script>
-  </head>
-  <body>
-    <card-01></card-01>
-    <card-horizontal-01></card-horizontal-01>
-  </body>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ededed;
+    }
+  </style>
+  <title>exercises-andres-ts</title>
+</head>
+
+<body>
+  <exercises-andres-ts></exercises-andres-ts>
+
+  <script type="module" src="./out-tsc/src/exercises-andres-ts.js"></script>
+</body>
+
 </html>
