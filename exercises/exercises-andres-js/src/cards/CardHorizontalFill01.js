@@ -2,9 +2,9 @@
 import { LitElement, html, css } from 'lit'
 
 // Images 
-import Profile from '/cap.webp'
+const Profile = new URL('../../assets/img/cap.webp', import.meta.url).href
 
-export class CardHorizontalFit01 extends LitElement {
+export class CardHorizontalFill01 extends LitElement {
 
     render() {
         return html`
@@ -22,7 +22,7 @@ export class CardHorizontalFit01 extends LitElement {
                 </div>
                 <div class='card__right'>
                     <div class='card__right-container-img'>
-                        <img class='card__right-container-img-img' src=${Profile} width='150'/>
+                        <img class='card__right-container-img-img' src=${Profile} width='150' alt='Profile' />
                     </div>
                     <div class='card__right-nav'>
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -53,9 +53,9 @@ export class CardHorizontalFit01 extends LitElement {
         /* VIEWS DESKTOP */ 
         .card {
             display: grid;
-            grid-template-columns: repeat(2, auto);
+            // grid-auto-rows: 15.6rem;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 15.6rem), 1fr));
             gap: .5rem;
-            width: 37.5rem;
             padding: 1.5rem;
             border-radius: 1rem;
             background-color: #673AB7;
@@ -128,28 +128,7 @@ export class CardHorizontalFit01 extends LitElement {
             cursor: pointer;
         }
 
-        /* VIEWS MOBILE 425PX */
-        @media screen and (max-width: 425px) {
-            .card {
-                width: 18.7rem;
-                grid-template-columns: 100%;
-                gap: 2rem;
-            }
-
-            .card__left-header {
-                text-align: center;
-            }
-
-            .card__left-body {
-                text-align: center;
-            }
-
-            .card__left-footer {
-                justify-content: center;
-            }
-        }
-
     `
 }
 
-customElements.define('card-horizontal-fit-01', CardHorizontalFit01)
+customElements.define('card-horizontal-fill-01', CardHorizontalFill01)

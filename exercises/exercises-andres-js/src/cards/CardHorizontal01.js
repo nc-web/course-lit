@@ -2,7 +2,7 @@
 import { LitElement, html, css } from 'lit'
 
 // Images 
-import Profile from '/cap.webp'
+const Profile = new URL('../../assets/img/cap.webp', import.meta.url).href
 
 export class CardHorizontal01 extends LitElement {
 
@@ -22,7 +22,7 @@ export class CardHorizontal01 extends LitElement {
                 </div>
                 <div class='card__right'>
                     <div class='card__right-container-img'>
-                        <img class='card__right-container-img-img' src=${Profile} width='150'/>
+                        <img class='card__right-container-img-img' src=${Profile} width='150' alt='Profile' />
                     </div>
                     <div class='card__right-nav'>
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">

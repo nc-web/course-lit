@@ -5,7 +5,7 @@ import { LitElement, html, css } from 'lit'
 import '../components/buttons/basic-buttons/ButtonBasic01.js'
 
 // Images
-import AmericanCap from '/cap.webp'
+const AmericanCap = new URL('../../assets/img/cap.webp', import.meta.url).href
 
 export class Card01 extends LitElement {
 
@@ -13,7 +13,7 @@ export class Card01 extends LitElement {
         return html`
         <article class='card'>
             <div class='card__header'>
-                <img class='card__header-img' src=${AmericanCap} />
+                <img class='card__header-img' src=${AmericanCap} alt='Capitan America'/>
             </div>
             <div class='card__body'>
                 <h2 class='card__body-title'>ANDRES GIRALDO</h2>
