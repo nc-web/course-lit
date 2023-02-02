@@ -43,6 +43,11 @@ export class Card01 extends LitElement {
             background-color: #E0E0E0;
         }
 
+        .card:hover {
+            transition: .3s;
+            background-color: #EA80FC; 
+        }
+
         .card__header {
             display: grid;
             justify-content: center;
