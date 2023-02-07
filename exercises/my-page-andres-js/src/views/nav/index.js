@@ -1,27 +1,29 @@
-
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, css } from 'lit';
 
 // Components
-import './NavDesktop.js'
-import './NavMobile.js'
+import './NavDesktop.js';
+import './NavMobile.js';
 
-export class Index extends LitElement {
-
-    render() {
-        if (screen.width > 425) {
-            return html`<nav-desktop />`
-        } else if (screen.width <= 425 || screen.width <= 375 || screen.width <= 320) {
-            return html`<nav-mobile />`
-        } else {
-            return html`Error al cargar el menu`
-        }
+export class IndexNav extends LitElement {
+  render() {
+    if (window.screen.width > 425) {
+      return html`<nav-desktop></nav-desktop>`;
     }
+    if (
+      window.screen.width <= 425 ||
+      window.screen.width <= 375 ||
+      window.screen.width <= 320
+    ) {
+      return html`<nav-mobile></nav-mobile>`;
+    }
+    return html`Error al cargar el menu`;
+  }
 
-    static styles = css`
-        :host {
-            display: block;
-        }
-    `
+  static styles = css`
+    :host {
+      display: block;
+    }
+  `;
 }
 
-customElements.define('index-nav', Index)
+customElements.define('index-nav', IndexNav);
