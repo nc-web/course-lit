@@ -44,7 +44,7 @@ export class StudiesDesktop extends LitElement {
       height: 50rem;
       margin: 0;
       padding: 0;
-      background: url('/img/background-01.webp');
+      background: url('assets/img/background-01.webp');
       // filter: blur(2px);
     }
 

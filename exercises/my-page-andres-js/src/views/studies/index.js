@@ -4,17 +4,17 @@ import { LitElement, html, css } from 'lit';
 import './StudiesDesktop.js';
 import './StudiesMobile.js';
 
-export class Index extends LitElement {
+export class IndexStudies extends LitElement {
   render() {
     if (window.screen.width > 425) {
-      return html`<nav-desktop></nav-desktop>`;
+      return html`<studies-desktop></-desktop>`;
     }
     if (
       window.screen.width <= 425 ||
       window.screen.width <= 375 ||
       window.screen.width <= 320
     ) {
-      return html`<nav-mobile></nav-mobile>`;
+      return html`<studies-mobile></studies-mobile>`;
     }
     return html`Error al cargar el menu`;
   }
@@ -26,4 +26,4 @@ export class Index extends LitElement {
   `;
 }
 
-customElements.define('index-studies', Index);
+customElements.define('index-studies', IndexStudies);

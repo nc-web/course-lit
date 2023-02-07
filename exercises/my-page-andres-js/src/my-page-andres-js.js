@@ -2,7 +2,8 @@ import { LitElement, html, css } from 'lit';
 
 // Components
 import './views/nav/index.js';
-import './/views/header/index.js';
+import './views/header/index.js';
+import './views/studies/index.js'
 
 class MyPageAndresJs extends LitElement {
   render() {
@@ -10,6 +11,7 @@ class MyPageAndresJs extends LitElement {
       <main>
         <index-nav></index-nav>
         <index-header></index-header>
+        <index-studies></index-studies>
       </main>
     `;
   }
