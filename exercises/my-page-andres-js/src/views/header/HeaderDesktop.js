@@ -13,6 +13,12 @@ export class HeaderDesktop extends LitElement {
   render() {
     return html`
       <section class="section" id="section-header">
+        <div classs="section__title">
+          <slot class="section__title-title" name="title">LOREM IPSUM</slot>
+          <slot class="section__title-subtitle" name="subtitle"
+            >Lorem ipsum</slot
+          >
+        </div>
         <div class="section__cards">
           <div class="section__cards-01">
             <img class="section__cards-01-img" src=${HTML5} alt="HTML5" />
@@ -52,13 +58,29 @@ export class HeaderDesktop extends LitElement {
       padding: 1rem;
     }
 
+    .section__title {
+      background-color: blueviolet;
+    }
+
+    .section__title-title {
+      color: #ffd600;
+      font-size: 4rem;
+      text-align: center;
+    }
+
+    .section__title-subtitle {
+      color: #ff6d00;
+      font-size: 3rem;
+      text-align: center;
+    }
+
     .section__cards {
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
       gap: 2rem;
-      top: 28rem;
+      top: 8rem;
       left: 0rem;
     }
 

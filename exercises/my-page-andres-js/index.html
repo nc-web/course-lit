@@ -6,15 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="Description" content="Put your description here.">
   <base href="/">
-
   
   <title>my-page-andres-js</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/css/global-styles.css">
+
 </head>
 
 <body>
-  <my-page-andres-js></my-page-andres-js>
 
+  <index-nav></index-nav>
+  <header-desktop>
+    <h1 slot='title'>ANDRES GIRALDO</h1>
+    <h2 slot='subtitle'>Developer Full Stack</h2>
+  </header-desktop>
+  <!-- <my-page-andres-js></my-page-andres-js> -->
+
+  <!-- Components -->
   <script type="module" src="./src/my-page-andres-js.js"></script>
+  <script type='module' src="./src//views/nav/index.js"></script>
+  <script type='module' src="./src/views/header/index.js"></script>
+  <script type='module' src="./src/views/header/HeaderDesktop.js"></script>
 </body>
 
 </html>
