@@ -5,8 +5,8 @@ import {LitElement, html, css} from 'lit'
 import '../components-js/buttons/basic-buttons/ButtonBasicPoint01'
 
 //imagen
-const Avatar = new URL('/assets/img/avatar.jpg',import.meta.url).href
-const Premium = new URL('/assets/img/premium.jpg',import.meta.url).href
+const Avatar = new URL('/assets/img/avatar.webp',import.meta.url).href
+const Premium = new URL('/assets/img/premium.webp',import.meta.url).href
 
 export class CardBasic02 extends LitElement {
     render() {
@@ -30,8 +30,7 @@ export class CardBasic02 extends LitElement {
                     <p class="card2__footer-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. <b>Minima saepe aut eos.</b> </p>
                     <p class="card2__footer-link"> Manage Your Account </p>
                     <div>
-                    <button-basic-01>Algo</button-basic-01>
-                </div>
+                                    </div>
                 </div>
 
                
@@ -129,13 +128,13 @@ export class CardBasic02 extends LitElement {
     font-size: 14px;
     right: 30px;
     top: -15px;
-    color: #757474;
+    color: #747575;
 }
 
 .card2__footer {
     width: 200px;
     position: absolute;
-    background-color: #eceaea;
+    background-color: #d0e5fd;
     font-size: 10px;
     left: 15px;
     padding: 0 10px;

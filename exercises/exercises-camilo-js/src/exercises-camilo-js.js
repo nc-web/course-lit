@@ -2,13 +2,13 @@
 import { LitElement, html, css } from 'lit'
 
 // Components
-import './cards/CardBasic02.js'
+import './cards/Card04.js'
 
 class ExercisesCamiloJs extends LitElement {
   render() {
     return html`
       <main>
-        <card-basic-02></card-basic-02>
+        <card-04></card-04>
       </main>
     `
   }

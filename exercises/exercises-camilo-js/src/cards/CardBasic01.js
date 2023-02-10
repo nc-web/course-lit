@@ -2,7 +2,7 @@
 import { LitElement, html, css } from 'lit'
 
 //imagen
-const Imagen = new URL('../../assets/img/tools.png',import.meta.url).href
+const Imagen = new URL('/assets/img/tools.webp',import.meta.url).href
 
 export class CardBasic01 extends LitElement {
     render() {
@@ -10,7 +10,7 @@ export class CardBasic01 extends LitElement {
 
         <div class="card" >
             <div class="card__img">
-                <img src=${Imagen} alt="imagen" width="30px"/>
+                <img src=${Imagen} alt="photo" width="30px"/>
             </div>
             <h4 class="card__tittle">LOREM IMPSUN </h4>
             <div class="card__text">    
