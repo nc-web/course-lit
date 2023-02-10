@@ -2,12 +2,13 @@ import { LitElement, html, css } from 'lit';
 
 // Components
 import './views/section/index.js';
+import './views/section/HeaderTableLaptop.js';
 
 class MySectionJennygomezJs extends LitElement {
   render() {
     return html`
       <main>
-        <index-header></index-header>
+        <header-table-laptop></header-table-laptop>
       </main>
     `;
   }
