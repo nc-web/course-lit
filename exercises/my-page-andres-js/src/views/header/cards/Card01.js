@@ -17,12 +17,18 @@ export class Card01 extends LitElement {
             />
           </div>
           <div class="card__header-containertext">
-            <h4 class="card__header-containertext-title">
-              ANDRES GIRALDO ARENAS
-            </h4>
-            <p class="card__header-containertext-subtitle">
-              Developer Full Stack
-            </p>
+            <slot
+              class="card__header-containertext-title"
+              name="card__header-containertext-title"
+            >
+              LOREM INPSUM
+            </slot>
+            <slot
+              class="card__header-containertext-subtitle"
+              name="card__header-containertext-subtitle"
+            >
+              LOREM
+            </slot>
             <div class="card__header-containertext-icon">
               <svg
                 class="card__header-containertext-icon-01"
@@ -135,6 +141,7 @@ export class Card01 extends LitElement {
 
     .card__header-containertext-subtitle {
       color: #424242;
+      font-weight: normal;
     }
 
     .card__header-containertext-icon {
