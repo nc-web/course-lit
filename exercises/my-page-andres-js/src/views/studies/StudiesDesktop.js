@@ -13,6 +13,11 @@ export class StudiesDesktop extends LitElement {
   render() {
     return html`
       <section class="section" id="section-studies">
+        <div>
+          <slot class="section__studies-desktop" name="section__studies-desktop"
+            >Lorem dolor</slot
+          >
+        </div>
         <div class="section__cards">
           <div class="section__cards-01">
             <img class="section__cards-01-img" src=${HTML5} alt="HTML5" />

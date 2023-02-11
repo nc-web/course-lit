@@ -7,7 +7,7 @@ import './StudiesMobile.js';
 export class IndexStudies extends LitElement {
   render() {
     if (window.screen.width > 425) {
-      return html`<studies-desktop></-desktop>`;
+      return html`<studies-desktop></studies-desktop>`;
     }
     if (
       window.screen.width <= 425 ||
