@@ -10,7 +10,7 @@ export class IndexHeader extends LitElement {
     if (window.screen.width > 1024) {
       return html`<header-desktop></header-desktop>`;
     }
-    if (window.screen.width <= 1024) {
+    if (window.screen.width > 425 && window.screen.width <= 1024) {
       return html`<header-table-laptop></header-table-laptop>`;
     }
     if (

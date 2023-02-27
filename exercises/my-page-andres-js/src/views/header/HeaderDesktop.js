@@ -14,8 +14,12 @@ export class HeaderDesktop extends LitElement {
     return html`
       <section class="section" id="section-header">
         <div classs="section__title">
-          <h1 class="section__title-title">LOREM IPSUM</h1>
-          <h2 class="section__title-subtitle">Lorem ipsum</h2>
+          <slot class="section__title-title" name="section__title-title"
+            >LOREM IPSUM</slot
+          >
+          <slot class="section__title-subtitle" name="section__title-subtitle"
+            >Lorem ipsum</slot
+          >
         </div>
         <div class="section__cards">
           <div class="section__cards-01">
@@ -28,7 +32,10 @@ export class HeaderDesktop extends LitElement {
 
           <div class="section__cards03">
             <card-01>
-              <h4 slot="card__header-containertext-subtitle">ANDRES GIRALDO</h4>
+              <h4 slot="card__header-containertext-title">ANDRES GIRALDO</h4>
+              <h5 slot="card__header-containertext-subtitle">
+                Full Stack Developer
+              </h5>
             </card-01>
           </div>
 
