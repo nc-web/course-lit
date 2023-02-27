@@ -1,13 +1,15 @@
 import { LitElement, html, css } from 'lit';
 
 // Components
-import './views/section/index.js';
+import './views/section-sesgado/SectionDesktop.js';
+import './views/cards/CardTransparent.js';
 
 class MySectionJennygomezJs extends LitElement {
   render() {
     return html`
       <main>
-        <index-header></index-header>
+        <section-desktop></section-desktop>
+        <card-trasparent></card-trasparent>
       </main>
     `;
   }

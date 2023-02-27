@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-// Components
+// Component
 import './HeaderDesktop.js';
 import './HeaderTableLaptop.js';
 import './HeaderMobile.js';

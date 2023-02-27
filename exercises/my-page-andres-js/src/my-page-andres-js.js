@@ -3,7 +3,7 @@ import { LitElement, html, css } from 'lit';
 // Components
 import './views/nav/index.js';
 import './views/header/index.js';
-import './views/studies/index.js'
+import './views/studies/index.js';
 
 class MyPageAndresJs extends LitElement {
   render() {
