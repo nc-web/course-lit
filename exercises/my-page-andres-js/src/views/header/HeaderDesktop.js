@@ -13,7 +13,7 @@ export class HeaderDesktop extends LitElement {
   render() {
     return html`
       <section class="section" id="section-header">
-        <div classs="section__title">
+        <div class="section__title">
           <slot class="section__title-title" name="section__title-title"
             >LOREM IPSUM</slot
           >
@@ -31,12 +31,7 @@ export class HeaderDesktop extends LitElement {
           </div>
 
           <div class="section__cards03">
-            <card-01>
-              <h4 slot="card__header-containertext-title">ANDRES GIRALDO</h4>
-              <h5 slot="card__header-containertext-subtitle">
-                Full Stack Developer
-              </h5>
-            </card-01>
+            <slot></slot>
           </div>
 
           <div class="section__cards-04">
