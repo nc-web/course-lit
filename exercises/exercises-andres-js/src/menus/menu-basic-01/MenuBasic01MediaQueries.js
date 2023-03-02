@@ -12,17 +12,23 @@ export class MenuBasic01 extends LitElement {
     super();
     this.propButton = {};
     this.propMenu = {};
+    // this.propButton = this.getElementsByClassName('.menu__button');
+    // this.propMenu = this.getElementsByClassName('.menu__nav');
+    // this. ('menu__nav--show');
   }
 
   animationMenu() {
-    this.propButton = document.getElementById('menu__button');
-    this.propMenu = document.getElementById('menu__nav');
+    this.propButton = this.getElementsByClassName('menu__button');
+    this.propMenu = this.getElementsByClassName('menu__nav');
     console.log(this.propButton);
     console.log(this.propMenu);
 
-    this.propButton.addEventListener('click', () => {
-      this.propMenu.classList.toggle('menu__nav--show');
-    });
+    this.propMenu = this.classList('menu__nav--show');
+    // this.propMenu.toggle('menu__nav--show');
+
+    // this.propButton.addEventListener('click', () => {
+    //   this.propMenu.classList.toggle('menu__nav--show');
+    // });
   }
 
   render() {
@@ -31,7 +37,12 @@ export class MenuBasic01 extends LitElement {
         <div class="menu__company">
           <img class="menu__company-img" src=${Logo} alt="Logo" />
         </div>
-        <div class="menu__button" id="menu__button">
+        <div
+          class="menu__button"
+          id="menu__button"
+          @click=${this.animationMenu}
+          @keyup=${this.handleMenu}
+        >
           <svg class="menu__button-svg" viewBox="0 0 24 24">
             <title>menu</title>
             <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
