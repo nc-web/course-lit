@@ -7,29 +7,45 @@
   <meta name="Description" content="Put your description here.">
   <base href="/">
 
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #ededed;
-    }
-  </style>
   <title>exercises-jenny-js</title>
+
+  <link rel="stylesheet" href="./assets/css/global-styles.css">
 </head>
 
 <body>
-  <!--
-  <exercises-jenny-js></exercises-jenny-js>
+  <!-- <exercises-andres-js></exercises-andres-js> -->
+  <index-menu-basic-01>
+    <a href="#section-01" slot='menu__nav-m-slot1'>
+      SECTION 01
+    </a>
+    <a href="#section-02" slot='menu__nav-m-slot2'>
+      SECTION 02
+    </a>
+    <a href="#section-03" slot='menu__nav-m-slot3'>
+      SECTION 03
+    </a>
+    <a href="#section-04" slot='menu__nav-m-slot4'>
+      SECTION 04
+    </a>
+    <a href="./src/pages/login.html" slot='menu__nav-m-slot5'>
+      PAGE LOGIN
+    </a>
+  </index-menu-basic-01>
+  <section-01 id="section-01"></section-01>
+  <section-02 id="section-02"></section-02>
+  <section-03 id="section-03"></section-03>
+  <section-04 id="section-04"></section-04>
 
-  <script type="module" src="./src/exercises-jenny-js.js"></script>
-  -->
+  <script type="module" src="./src/views/menus/menu-basic-01/index.js"></script>
+  <script type="module" src="./src/views/sections/Section01.js"></script>
+  <script type="module" src="./src/views/sections/Section02.js"></script>
+  <script type="module" src="./src/views/sections/Section03.js"></script>
+  <script type="module" src="./src/views/sections/Section04.js"></script>
 
 
-  <menu-basic-01></menu-basic-01>
+  <script type="module" src="./src/views/exercises-andres-js.js"></script>
+  <script type="module" src="./src/views/menus/menu-basic-01/MenuBasic01.js"></script>
 
-  <script type="module" src="./src/views/menus/menu-basic-01/menu-basic-01.js"></script>
 </body>
 
 </html>
