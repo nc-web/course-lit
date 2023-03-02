@@ -1,8 +1,8 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css } from 'lit'
 
 // Components
-import './views/section-sesgado/SectionDesktop.js';
-import './views/cards/CardTransparent.js';
+import './views/section-sesgado/SectionDesktop.js'
+import './views/cards/CardTransparent.js'
 
 class MySectionJennygomezJs extends LitElement {
   render() {
@@ -20,7 +20,7 @@ class MySectionJennygomezJs extends LitElement {
       margin: 0;
       padding: 0;
     }
-  `;
+  `
 }
 
 customElements.define('my-section-jennygomez-js', MySectionJennygomezJs);

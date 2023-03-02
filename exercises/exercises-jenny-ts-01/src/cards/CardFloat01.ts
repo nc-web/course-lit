@@ -1,12 +1,12 @@
 
-import { LitElement, html, css } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { LitElement, html, css  } from 'lit'
+import { customElement } from 'lit/decorators' 
 
-// Img
+// Images
 import Lit from '/jenny.png'
 
-@customElement('card-02')
-export class Card02 extends LitElement {
+@customElement('card-float-01')
+export class CardFloat01 extends LitElement {
     render() {
         return html`
             <article class='card'>
@@ -16,7 +16,7 @@ export class Card02 extends LitElement {
 
                 <div class='card__body'>
                     <h2 class='card__body-title'> Jenny Gómez </h2>
-                    <h4 class='card__body-subtitle'> Desarrollador Web </h4>
+                    <h4 class='card__body-subtitle'> Desarrollo Web </h4>
                 </div>
 
                 <div class='card__footer'>
@@ -41,12 +41,12 @@ export class Card02 extends LitElement {
     static styles = css`
         :host {
             display: inline-block;
-            margin: 0;
-            padding: 0; 
+            margin: 3.1rem;
+            padding: 0;
         }
 
         .card {
-            padding: 1.2rem;
+            padding: 1rem;
             border-radius: 1.5rem;
             width: 17.5rem;
             background-color: #AB47BC;
@@ -59,6 +59,8 @@ export class Card02 extends LitElement {
 
         .card__header-img {
             position: relative;
+            top: -5rem;
+            left: 0;
             border-radius: 50%;
             box-shadow: .1rem .1rem .1rem .1rem rgba(0, 0, 0, 0.3);
             width: 9.1rem;
@@ -66,6 +68,10 @@ export class Card02 extends LitElement {
         }
 
         .card__body {
+            position: relative;
+            top: -3rem;
+            left: 0;
+            padding: .5rem;
             text-align: center;
             color: #FFFFFF;
         }
@@ -75,6 +81,10 @@ export class Card02 extends LitElement {
         }
 
         .card__footer {
+            position: relative;
+            top: -2rem;
+            left: 0;
+            padding: .5rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -100,6 +110,6 @@ export class Card02 extends LitElement {
             width: 3rem;
             height: 3rem;
         }
-
     `
+
 }
