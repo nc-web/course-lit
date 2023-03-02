@@ -1,25 +1,17 @@
-
-import { LitElement, html, css } from 'lit'
-
-// Components
-import './cards/Card04.js'
+import { LitElement, html, css } from 'lit';
 
 class ExercisesCamiloJs extends LitElement {
   render() {
-    return html`
-      <main>
-        <card-04></card-04>
-      </main>
-    `
+    return html` <main></main> `;
   }
 
   static styles = css`
     :host {
-      display: block;
+      display: inline-block;
       margin: 0;
       padding: 0;
     }
-  `
+  `;
 }
 
 customElements.define('exercises-camilo-js', ExercisesCamiloJs);
