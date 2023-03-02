@@ -1,23 +1,20 @@
 {
   "name": "exercises-harry-js",
-  "private": true,
+  "description": "Webcomponent exercises-harry-js following open-wc recommendations",
+  "license": "MIT",
+  "author": "exercises-harry-js",
   "version": "0.0.0",
   "type": "module",
-  "main": "dist/my-element.es.js",
-  "exports": {
-    ".": "./dist/my-element.es.js"
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "analyze": "cem analyze --litelement",
+    "start": "web-dev-server"
   },
   "dependencies": {
-    "lit": "^2.4.1"
+    "lit": "^2.0.2"
   },
   "devDependencies": {
-    "vite": "^4.0.0"
-  }
+    "@custom-elements-manifest/analyzer": "^0.4.17",
+    "@web/dev-server": "^0.1.34"
+  },
+  "customElements": "custom-elements.json"
 }
