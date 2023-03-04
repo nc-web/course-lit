@@ -10,7 +10,7 @@ export class IndexMenuBasic01 extends LitElement {
     if (window.screen.width > 1024) {
       return html` <menu-basic-01-desktop>
         <slot class="menu__nav-slot" name="menu__nav-d-slot1">
-          <li class="menu__nav-li">Lorem 1</li>
+          <!-- <li class="menu__nav-li">Lorem 1</li> -->
         </slot>
 
         <slot class="menu__nav-slot" name="menu__nav-d-slot2">
@@ -30,10 +30,11 @@ export class IndexMenuBasic01 extends LitElement {
         </slot>
       </menu-basic-01-desktop>`;
     }
+
     if (window.screen.width > 425 && window.screen.width <= 1024) {
       return html` <menu-basic-01-table-laptop>
         <slot class="menu__nav-slot" name="menu__nav-tl-slot1">
-          <li class="menu__nav-li">Lorem 1</li>
+          <!-- <li class="menu__nav-li">Lorem 1</li> -->
         </slot>
 
         <slot class="menu__nav-slot" name="menu__nav-tl-slot2">
@@ -53,6 +54,7 @@ export class IndexMenuBasic01 extends LitElement {
         </slot>
       </menu-basic-01-table-laptop>`;
     }
+
     if (
       window.screen.width <= 425 ||
       window.screen.width <= 375 ||
