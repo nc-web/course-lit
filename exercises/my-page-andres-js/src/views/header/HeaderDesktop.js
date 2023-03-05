@@ -1,3 +1,4 @@
+
 import { LitElement, html, css } from 'lit';
 
 // Components
@@ -61,7 +62,7 @@ export class HeaderDesktop extends LitElement {
     }
 
     .section__title {
-      background-color: blueviolet;
+      /* background-color: blueviolet; */
     }
 
     .section__title-title {
