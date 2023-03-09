@@ -2,9 +2,12 @@ import { LitElement, html, css } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { animate } from '@lit-labs/motion';
 
+// components
+import './MenuSocialMediaDesktop01MHD5.js';
+
 const Logo = new URL('/assets/img/logo128.png', import.meta.url).href;
 
-export class MenuHorizontalDouble01Mobile extends LitElement {
+export class MenuHorizontalDouble05Mobile extends LitElement {
   static properties = {
     propMenu: { type: Boolean, reflect: true },
     slid: { type: Boolean },
@@ -31,6 +34,9 @@ export class MenuHorizontalDouble01Mobile extends LitElement {
 
   render() {
     return html`
+      <div class="menusm">
+        <menu-social-media-desktop-01-mhd5></menu-social-media-desktop-01-mhd5>
+      </div>
       <div class="menu">
         <div class="menu__company">
           <img class="menu__company-img" src=${Logo} alt="Logo" />
@@ -122,6 +128,11 @@ export class MenuHorizontalDouble01Mobile extends LitElement {
       left: calc(100% - var(--box-size));
     }
 
+    .menusm {
+      display: flex;
+      justify-content: end;
+    }
+
     .menu {
       display: flex;
       justify-content: space-between;
@@ -164,6 +175,6 @@ export class MenuHorizontalDouble01Mobile extends LitElement {
 }
 
 customElements.define(
-  'menu-horizontal-double-01-mobile',
-  MenuHorizontalDouble01Mobile
+  'menu-horizontal-double-05-mobile',
+  MenuHorizontalDouble05Mobile
 );
