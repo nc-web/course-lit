@@ -132,9 +132,6 @@ export class MenuBasic01 extends LitElement {
         color: #ffffff;
       }
 
-      .menu__nav-slot {
-      }
-
       .menu__nav-li {
         list-style: none;
         margin: 0.3rem 0;

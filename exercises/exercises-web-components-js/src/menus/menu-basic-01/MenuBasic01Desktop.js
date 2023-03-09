@@ -7,7 +7,10 @@ export class MenuBasic01Desktop extends LitElement {
     return html`
       <div class="menu">
         <div class="menu__company">
-          <img class="menu__company-img" src=${Logo} alt="Logo" />
+          <div>
+            <img class="menu__company-img" src=${Logo} alt="Logo" />
+          </div>
+          <h4 class="menu__company-title">COMPANY</h4>
         </div>
         <nav class="menu__nav" id="menu__nav">
           <slot></slot>
@@ -23,21 +26,43 @@ export class MenuBasic01Desktop extends LitElement {
       padding: 0;
     }
 
+    ::slotted(ul) {
+      text-align: center;
+      margin: 0 0.3rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 0.5rem;
+    }
+
+    ::slotted(ul:hover) {
+      transition: 0.5s;
+      transform: scale(1.2);
+      filter: drop-shadow(0.5rem 0.5rem 0.5rem #000000);
+    }
+
     .menu {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: blue;
       padding: 0.5rem;
-      height: 4rem;
+      background-color: rgb(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
     }
 
     .menu__company {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin: 0.3rem;
     }
 
     .menu__company-img {
       width: 3rem;
+      margin-right: 0.3rem;
+    }
+
+    .menu__company-title {
+      color: #616161;
+      font-size: 1.1rem;
     }
 
     .menu__button-svg {
@@ -55,8 +80,6 @@ export class MenuBasic01Desktop extends LitElement {
       flex-direction: row;
       justify-content: end;
       align-items: center;
-      transform: translateY(0);
-      width: 100%;
       color: #ffffff;
     }
   `;

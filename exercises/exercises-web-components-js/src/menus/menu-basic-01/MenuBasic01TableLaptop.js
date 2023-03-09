@@ -26,13 +26,26 @@ export class MenuBasic01TableLaptop extends LitElement {
       padding: 0;
     }
 
+    ::slotted(ul) {
+      text-align: center;
+      margin: 0 0.3rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 0.5rem;
+    }
+
+    ::slotted(ul:hover) {
+      transition: 0.5s;
+      transform: scale(1.2);
+      filter: drop-shadow(0.5rem 0.5rem 0.5rem #000000);
+    }
+
     .menu {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: blue;
       padding: 0.5rem;
-      height: 4rem;
+      background-color: rgb(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
     }
 
     .menu__company {
@@ -48,7 +61,8 @@ export class MenuBasic01TableLaptop extends LitElement {
     }
 
     .menu__company-title {
-      color: #ffffff;
+      color: #616161;
+      font-size: 1.1rem;
     }
 
     .menu__button-svg {
@@ -63,11 +77,8 @@ export class MenuBasic01TableLaptop extends LitElement {
 
     .menu__nav {
       display: flex;
-      flex-direction: row;
-      justify-content: end;
+      justify-content: flex-end;
       align-items: center;
-      transform: translateY(0);
-      width: 100%;
       color: #ffffff;
     }
   `;

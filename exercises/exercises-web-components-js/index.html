@@ -16,21 +16,56 @@
 <body>
   <!-- <exercises-web-components-js></exercises-web-components-js> -->
   <index-menu-basic-01>
-    <div href="#section-01" slot='menu__nav-m-slot1'>
-      SECTION 01
+    <!-- Mobile -->
+    <div slot='menu__nav-m-slot1'>
+      <a href="#section-01">SECTION 01</a>
     </div>
-    <a href="#section-02" slot='menu__nav-m-slot2'>
-      SECTION 02
-    </a>
-    <a href="#section-03" slot='menu__nav-m-slot3'>
-      SECTION 03
-    </a>
-    <a href="#section-04" slot='menu__nav-m-slot4'>
-      SECTION 04
-    </a>
-    <a href="./src/pages/login.html" slot='menu__nav-m-slot5'>
-      PAGE LOGIN
-    </a>
+    <div slot='menu__nav-m-slot2'>
+      <a href="#section-02">SECTION 01</a>
+    </div>
+    <div slot='menu__nav-m-slot3'>
+      <a href="#section-03">SECTION 01</a>
+    </div>
+    <div slot='menu__nav-m-slot4'>
+      <a href="#section-04">SECTION 01</a>
+    </div>
+    <div slot='menu__nav-m-slot5'>
+      <a href="./src/login/index.html">LOGIN</a>
+    </div>
+
+    <!-- Table - Laptop -->
+    <div slot='menu__nav-tl-slot1'>
+      <a href="#section-01">SECTION 01</a>
+    </div>
+    <div slot='menu__nav-tl-slot2'>
+      <a href="#section-01">SECTION 02</a>
+    </div>
+    <div slot='menu__nav-tl-slot3'>
+      <a href="#section-01">SECTION 03</a>
+    </div>
+    <div slot='menu__nav-tl-slot4'>
+      <a href="#section-01">SECTION 04</a>
+    </div>
+    <div slot='menu__nav-tl-slot5'>
+      <a href="#section-01">SECTION 05</a>
+    </div>
+
+    <!-- Desktop -->
+    <div slot='menu__nav-d-slot1'>
+      <a href="#section-01">SECTION 01</a>
+    </div>
+    <div slot='menu__nav-d-slot2'>
+      <a href="#section-01">SECTION 02</a>
+    </div>
+    <div slot='menu__nav-d-slot3'>
+      <a href="#section-01">SECTION 03</a>
+    </div>
+    <div slot='menu__nav-d-slot4'>
+      <a href="#section-01">SECTION 04</a>
+    </div>
+    <div slot='menu__nav-d-slot5'>
+      <a href="#section-01">SECTION 05</a>
+    </div>
   </index-menu-basic-01>
 
   <script type="module" src="./src/exercises-web-components-js.js"></script>

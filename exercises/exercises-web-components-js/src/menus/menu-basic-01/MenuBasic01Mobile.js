@@ -4,7 +4,7 @@ const Logo = new URL('/assets/img/logo128.png', import.meta.url).href;
 
 export class MenuBasic01Mobile extends LitElement {
   static properties = {
-    propMenu: false,
+    propMenu: { type: Boolean, reflect: true },
   };
 
   constructor() {
@@ -70,18 +70,72 @@ export class MenuBasic01Mobile extends LitElement {
       padding: 0;
     }
 
+    :host .menu__nav {
+      display: grid;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 6rem;
+      right: 0;
+      width: 60%;
+      padding: 1rem;
+      color: #3a3a3a;
+      list-style: none;
+      border-bottom-left-radius: 0.8rem;
+      background-color: rgb(0, 0, 0, 0.2);
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      transition-timing-function: ease-in-out;
+      transition: 0.5s;
+      transform: translateX(-100%);
+    }
+
+    :host([propMenu]) .menu__nav {
+      display: grid;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 6rem;
+      right: 0;
+      width: 60%;
+      padding: 1rem;
+      color: #3a3a3a;
+      list-style: none;
+      border-bottom-left-radius: 0.8rem;
+      background-color: rgb(0, 0, 0, 0.2);
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      transition-timing-function: ease-in-out;
+      transition: 0.5s;
+      transform: translateX(0);
+    }
+
+    ::slotted(ul) {
+      text-align: center;
+      margin: 0 0.3rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 0.5rem;
+    }
+
+    ::slotted(ul:hover) {
+      transition: 0.5s;
+      transform: scale(1.2);
+      filter: drop-shadow(0.5rem 0.5rem 0.5rem #000000);
+    }
+
     .menu {
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: fixed;
-      background-color: rgb(0, 0, 0, 0.2);
       padding: 0.5rem;
       width: 100%;
       height: 5rem;
       z-index: 2;
+      background-color: rgb(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
-      box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgb(0, 0, 0, 0.2);
     }
 
     .menu__company {
@@ -108,32 +162,6 @@ export class MenuBasic01Mobile extends LitElement {
       fill: #ffffff;
       background-color: #3a3a3a;
       cursor: pointer;
-    }
-
-    .menu__nav {
-      display: grid;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 6rem;
-      right: 0;
-      width: 60%;
-      padding: 1rem;
-      color: #ffffff;
-      list-style: none;
-      border-bottom-left-radius: 0.8rem;
-      /* background-color: rgb(0, 0, 0, 0.4); */
-      z-index: 10;
-      box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgb(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      transition-timing-function: ease-in-out;
-      transition-duration: 3s;
-    }
-
-    .menu__nav-li {
-      list-style: none;
-      margin: 0.5rem 0;
     }
   `;
 }
