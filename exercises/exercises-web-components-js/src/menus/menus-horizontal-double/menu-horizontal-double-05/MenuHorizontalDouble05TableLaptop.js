@@ -8,19 +8,22 @@ const Logo = new URL('/assets/img/logo128.png', import.meta.url).href;
 export class MenuHorizontalDouble05TableLaptop extends LitElement {
   render() {
     return html`
-      <div class="menusm">
-        <menu-social-media-desktop-01-mhd5></menu-social-media-desktop-01-mhd5>
-      </div>
-      <div class="menu">
-        <div class="menu__company">
-          <div>
-            <img class="menu__company-img" src=${Logo} alt="Logo" />
-          </div>
-          <h4 class="menu__company-title">COMPANY</h4>
+      <div class="main">
+        <div class="menusm">
+          <menu-social-media-desktop-01-mhd5></menu-social-media-desktop-01-mhd5>
         </div>
-        <nav class="menu__nav" id="menu__nav">
-          <slot></slot>
-        </nav>
+        <div class="menu">
+          <div class="menu__company">
+            <div>
+              <img class="menu__company-img" src=${Logo} alt="Logo" />
+            </div>
+            <h4 class="menu__company-title">COMPANY</h4>
+          </div>
+          <nav class="menu__nav" id="menu__nav">
+            <slot></slot>
+          </nav>
+        </div>
+        <div></div>
       </div>
     `;
   }
@@ -45,17 +48,25 @@ export class MenuHorizontalDouble05TableLaptop extends LitElement {
       filter: drop-shadow(0.5rem 0.5rem 0.5rem #000000);
     }
 
+    .main {
+      position: absolute;
+      width: 100%;
+      height: 60rem;
+    }
+
     .menusm {
       display: flex;
       justify-content: end;
     }
 
     .menu {
+      position: sticky;
+      top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0.5rem;
-      background-color: rgb(0, 0, 0, 0.2);
+      background-color: rgb(255, 255, 255, 0.4);
       backdrop-filter: blur(10px);
     }
 
