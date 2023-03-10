@@ -54,35 +54,35 @@ export class MenuSocialMediaDesktop01MHD5 extends LitElement {
       justify-content: space-around;
       align-items: center;
       border-radius: 0.7rem 0.7rem 0 0;
-      background-color: rgb(0, 0, 0, 0.2);
+      background-color: rgb(250, 250, 250, 0.4);
       backdrop-filter: blur(10px);
     }
 
     .social__fb {
       width: 1.5rem;
       height: 1.5rem;
-      fill: #616161;
+      fill: #3a3a3a;
       cursor: pointer;
     }
 
     .social__ig {
       width: 1.5rem;
       height: 1.5rem;
-      fill: #616161;
+      fill: #3a3a3a;
       cursor: pointer;
     }
 
     .social__wapp {
       width: 1.5rem;
       height: 1.5rem;
-      fill: #616161;
+      fill: #3a3a3a;
       cursor: pointer;
     }
 
     .social__tel {
       width: 1.5rem;
       height: 1.5rem;
-      fill: #616161;
+      fill: #3a3a3a;
       cursor: pointer;
     }
 
