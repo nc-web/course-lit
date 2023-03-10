@@ -131,17 +131,23 @@ export class MenuHorizontalDouble05Mobile extends LitElement {
       left: calc(100% - var(--box-size));
     }
 
+    .main {
+      position: absolute;
+      width: 100%;
+      height: 40rem;
+    }
+
     .menusm {
       display: flex;
       justify-content: end;
     }
 
     .menu {
-      position: relative;
+      position: sticky;
+      top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: fixed;
       padding: 0.5rem;
       width: 100%;
       height: 5rem;
