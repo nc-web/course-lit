@@ -40,6 +40,7 @@ export class NavDesktop extends LitElement {
                 </a>
               </li>
             </ul>
+
             <ul class="nav__menu-top-ul">
               <li class="nav__menu-top-li">
                 <a class="nav__menu-top-a" href="#">
@@ -52,6 +53,7 @@ export class NavDesktop extends LitElement {
                 </a>
               </li>
             </ul>
+
             <ul class="nav__menu-top-ul">
               <li class="nav__menu-top-li">
                 <a class="nav__menu-top-a" href="#">
@@ -65,6 +67,7 @@ export class NavDesktop extends LitElement {
               </li>
             </ul>
           </div>
+
           <div class="nav__menu-bottom">
             <ul class="nav__menu-bottom-ul">
               <li class="nav__menu-bottom-li">
@@ -74,8 +77,20 @@ export class NavDesktop extends LitElement {
             <ul class="nav__menu-bottom-ul">
               <li class="nav__menu-bottom-li">
                 <a class="nav__menu-bottom-a" href="#section-studies"
+                  >Services</a
+                >
+              </li>
+            </ul>
+            <ul class="nav__menu-bottom-ul">
+              <li class="nav__menu-bottom-li">
+                <a class="nav__menu-bottom-a" href="#section-studies"
                   >Studies</a
                 >
+              </li>
+            </ul>
+            <ul class="nav__menu-bottom-ul">
+              <li class="nav__menu-bottom-li">
+                <a class="nav__menu-bottom-a" href="/login">Login</a>
               </li>
             </ul>
           </div>

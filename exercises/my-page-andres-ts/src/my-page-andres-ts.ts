@@ -5,7 +5,7 @@ import { Routes } from '@lit-labs/router';
 // Components
 import './views/nav/index.js';
 import './views/header/index.js';
-import './login/LoginDesktop.js';
+import './views/login/LoginDesktop.js';
 
 @customElement('my-page-andres-ts')
 export class MyPageAndresTs extends LitElement {
@@ -19,12 +19,18 @@ export class MyPageAndresTs extends LitElement {
 
   render() {
     return html`
-      <main>
-        ${this._routes.outlet()}
-        <a href="#" ${this._routes.goto('/login')}>Login</a>
-        <index-nav></index-nav>
+      ${this._routes.outlet()}
+      <a
+        href="${this._routes.link('/login')}"
+        ${this._routes.link('/login')}
+        ${this._routes.goto('/login')}
+        >Login</a
+      >
+      <!-- <main>
+        <index-nav>
+        </index-nav>
         <index-header></index-header>
-      </main>
+      </main> -->
     `;
   }
 
