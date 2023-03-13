@@ -1,11 +1,11 @@
 import { LitElement, html, css } from 'lit';
+import { property, customElement } from 'lit/decorators.js';
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+const logo = new URL('../../assets/open-wc-logo.svg', import.meta.url).href;
 
-class MpaRouteBasicJs extends LitElement {
-  static properties = {
-    header: { type: String },
-  }
+@customElement('lit-motion-ts')
+export class LitMotionTs extends LitElement {
+  @property({ type: String }) header = 'My app';
 
   static styles = css`
     :host {
@@ -19,7 +19,7 @@ class MpaRouteBasicJs extends LitElement {
       max-width: 960px;
       margin: 0 auto;
       text-align: center;
-      background-color: var(--mpa-route-basic-js-background-color);
+      background-color: var(--lit-motion-ts-background-color);
     }
 
     main {
@@ -50,21 +50,16 @@ class MpaRouteBasicJs extends LitElement {
     }
   `;
 
-  constructor() {
-    super();
-    this.header = 'My app';
-  }
-
   render() {
     return html`
       <main>
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
         <h1>${this.header}</h1>
 
-        <p>Edit <code>src/MpaRouteBasicJs.js</code> and save to reload.</p>
+        <p>Edit <code>src/LitMotionTs.ts</code> and save to reload.</p>
         <a
           class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples/"
+          href="https://open-wc.org/guides/developing-components/code-examples"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -84,5 +79,3 @@ class MpaRouteBasicJs extends LitElement {
     `;
   }
 }
-
-customElements.define('mpa-route-basic-js', MpaRouteBasicJs);

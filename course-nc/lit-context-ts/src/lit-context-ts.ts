@@ -3,8 +3,8 @@ import { property, customElement } from 'lit/decorators.js';
 
 const logo = new URL('../../assets/open-wc-logo.svg', import.meta.url).href;
 
-@customElement('mpa-route-basic-ts')
-export class MpaRouteBasicTs extends LitElement {
+@customElement('lit-context-ts')
+export class LitContextTs extends LitElement {
   @property({ type: String }) header = 'My app';
 
   static styles = css`
@@ -19,7 +19,7 @@ export class MpaRouteBasicTs extends LitElement {
       max-width: 960px;
       margin: 0 auto;
       text-align: center;
-      background-color: var(--mpa-route-basic-ts-background-color);
+      background-color: var(--lit-context-ts-background-color);
     }
 
     main {
@@ -56,7 +56,7 @@ export class MpaRouteBasicTs extends LitElement {
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
         <h1>${this.header}</h1>
 
-        <p>Edit <code>src/MpaRouteBasicTs.ts</code> and save to reload.</p>
+        <p>Edit <code>src/LitContextTs.ts</code> and save to reload.</p>
         <a
           class="app-link"
           href="https://open-wc.org/guides/developing-components/code-examples"
