@@ -1,3 +1,4 @@
+
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { Routes } from '@lit-labs/router';
@@ -9,6 +10,7 @@ import './views/login/LoginDesktop.js';
 
 @customElement('my-page-andres-ts')
 export class MyPageAndresTs extends LitElement {
+
   private _routes = new Routes(this, [
     { path: '/', render: () => html`<h1>Home</h1>` },
     { path: '/about', render: () => html`<h1>Projects</h1>` },
@@ -18,19 +20,12 @@ export class MyPageAndresTs extends LitElement {
   @property({ type: String }) header = 'My app';
 
   render() {
-    return html`
-      ${this._routes.outlet()}
-      <a
-        href="${this._routes.link('/login')}"
-        ${this._routes.link('/login')}
-        ${this._routes.goto('/login')}
-        >Login</a
-      >
-      <!-- <main>
-        <index-nav>
-        </index-nav>
-        <index-header></index-header>
-      </main> -->
+    return html`      <main>
+        ${this._routes.outlet()}
+        <a href="${this._routes.link('/login')}">Login</a>
+        <index-nav></index-nav>
+        <!-- <index-header></index-header> -->
+      </main>
     `;
   }
 

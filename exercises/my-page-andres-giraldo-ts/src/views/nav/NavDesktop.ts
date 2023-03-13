@@ -1,12 +1,20 @@
+
 import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { Routes } from '@lit-labs/router';
 
 // Images
-const Logo = new URL('../../../../assets/img/logo128.png', import.meta.url)
-  .href;
+const Logo = new URL('/assets/img/logo128.png', import.meta.url).href;
 
 @customElement('nav-desktop')
 export class NavDesktop extends LitElement {
+
+  private _routes = new Routes(this, [
+    { path: '/', render: () => html`<h1>Home</h1>` },
+    { path: '/about', render: () => html`<h1>Projects</h1>` },
+    { path: '/login', render: () => html`<login-desktop></login-desktop>` },
+  ]);
+
   render() {
     return html`
       <nav class="nav">
@@ -90,7 +98,7 @@ export class NavDesktop extends LitElement {
             </ul>
             <ul class="nav__menu-bottom-ul">
               <li class="nav__menu-bottom-li">
-                <a class="nav__menu-bottom-a" href="/login">Login</a>
+                <a class="nav__menu-bottom-a" href="/login" ${this._routes.goto()}>Login</a>
               </li>
             </ul>
           </div>
