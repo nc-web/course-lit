@@ -1,10 +1,10 @@
 import { LitElement, html, css } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
+import { property, customElement } from 'lit/decorators';
 
 const logo = new URL('../../assets/open-wc-logo.svg', import.meta.url).href;
 
-@customElement('lit-router-ts')
-export class LitRouterTs extends LitElement {
+@customElement('lit-ssr-ts')
+export class LitSsrTs extends LitElement {
   @property({ type: String }) header = 'My app';
 
   static styles = css`
@@ -19,7 +19,7 @@ export class LitRouterTs extends LitElement {
       max-width: 960px;
       margin: 0 auto;
       text-align: center;
-      background-color: var(--lit-router-ts-background-color);
+      background-color: var(--lit-ssr-ts-background-color);
     }
 
     main {
@@ -56,7 +56,7 @@ export class LitRouterTs extends LitElement {
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
         <h1>${this.header}</h1>
 
-        <p>Edit <code>src/LitRouterTs.ts</code> and save to reload.</p>
+        <p>Edit <code>src/LitSsrTs.ts</code> and save to reload.</p>
         <a
           class="app-link"
           href="https://open-wc.org/guides/developing-components/code-examples"
