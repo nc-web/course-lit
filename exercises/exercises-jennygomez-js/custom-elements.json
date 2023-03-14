@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/exercises-jennygomez-js.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ExercisesJennygomezJs",
+          "members": [
+            {
+              "kind": "field",
+              "name": "header",
+              "type": {
+                "text": "string"
+              },
+              "default": "'My app'",
+              "privacy": "public",
+              "attribute": "header"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "header",
+              "fieldName": "header"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "exercises-jennygomez-js",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "exercises-jennygomez-js",
+          "declaration": {
+            "name": "ExercisesJennygomezJs",
+            "module": "src/exercises-jennygomez-js.js"
+          }
+        }
+      ]
+    }
+  ]
+}
