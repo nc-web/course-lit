@@ -3,11 +3,9 @@ import { customElement } from 'lit/decorators.js';
 import { Router } from '@vaadin/router';
 import { routes } from './router/routes.js';
 
+// Router
 export const router = new Router(document.querySelector('#outlet'));
-
 router.setRoutes(routes);
-
-// import './views/home/index.js'
 
 @customElement('lit-router-vaadin-ts')
 export class LitRouterVaadinTs extends LitElement {
@@ -15,13 +13,12 @@ export class LitRouterVaadinTs extends LitElement {
     return html`
       <main>
         <nav>
-          <a href="/">Home</a>
-          <a href="#section-01">Section 01</a>
-          <a href="#section-02">Section 02</a>
+          <a href="${router.urlForPath('/')}">Home</a>
+          <a href="${router.urlForPath('#section-header')}">HEADER</a>
+          <a href="${router.urlForPath('#section-about')}">ABOUT</a>
           <a href="#section-03">Section 03</a>
           <a href="#section-04">Section 04</a>
           <a href="${router.urlForPath('/login')}">Login</a>
-          <!-- <page-home></page-home> -->
         </nav>
       </main>
     `;
