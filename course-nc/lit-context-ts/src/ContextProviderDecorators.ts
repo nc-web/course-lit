@@ -1,18 +1,19 @@
-// import { LitElement } from 'lit';
-// import { property } from 'lit/decorators.js'
-// import { provide } from '@lit-labs/context';
-// import { Logger, loggerContext } from '../context/logger-context.js';
 
-// export class MyApp extends LitElement {
-//   @provide({context: loggerContext})
-//   @property({attribute: false})
-//   public logger: Logger = {
-//     log: (msg) => {
-//       console.log(`[my-app] ${msg}`);
-//     },
-//   });
+import { LitElement, html } from 'lit'
+import { customElement } from 'lit/decorators.js'
+import { provide } from '@lit-labs/context'
 
-//   protected render(): TemplateResult {
-//     return html`<my-thing></my-thing>`;
-//   }
-// }
+// Context
+import { type Logger, loggerContext } from '../context/logger-context.js'
+
+@customElement('my-app')
+export class MyApp extends LitElement {
+
+  @provide({context: loggerContext})
+  logger = new Logger();
+
+  render() {
+    return html`...`;
+  }
+
+}
