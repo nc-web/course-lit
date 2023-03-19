@@ -66,9 +66,9 @@ export class MenuVerticalDesktop extends LitElement {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >
-                    <title>view-dashboard</title>
+                    <title>account-star</title>
                     <path
-                      d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z"
+                      d="M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12M5,13.28L7.45,14.77L6.8,11.96L9,10.08L6.11,9.83L5,7.19L3.87,9.83L1,10.08L3.18,11.96L2.5,14.77L5,13.28Z"
                     />
                   </svg>
                 </div>
@@ -108,12 +108,9 @@ export class MenuVerticalDesktop extends LitElement {
 
     .menu__body-nav-item {
       display: flex;
-      justify-content: center;
+      justify-content: left;
       align-items: center;
       gap: 0.2rem;
-    }
-
-    .menu__body-nav-item {
       cursor: pointer;
     }
 
