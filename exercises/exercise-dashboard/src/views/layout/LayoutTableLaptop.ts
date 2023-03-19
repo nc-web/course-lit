@@ -7,7 +7,7 @@ export class LayoutTableLaptop extends LitElement {
     return html` <h4>Layout Table Laptop</h4> `;
   }
 
-  static style = css`
+  static styles = css`
     :host {
       display: block;
       margin: 0;

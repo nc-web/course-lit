@@ -9,7 +9,7 @@ export class MenuVerticalTableLaptop extends LitElement {
 
   static styles = css`
     :host {
-      display: block;
+      display: inline-block;
       margin: 0;
       padding: 0;
     }

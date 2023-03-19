@@ -7,7 +7,7 @@ export class LayoutMobile extends LitElement {
     return html` <h4>Layout Mobile</h4> `;
   }
 
-  static style = css`
+  static styles = css`
     :host {
       display: block;
       margin: 0;

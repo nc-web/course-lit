@@ -12,7 +12,7 @@ export class IndexLayout extends LitElement {
     if (window.screen.width > 1024) {
       return html`<layout-desktop></layout-desktop>`;
     }
-    if (window.screen.width <= 768 || window.screen.width <= 1024) {
+    if (window.screen.width > 425 && window.screen.width <= 1024) {
       return html`<layout-table-laptop></layout-table-laptop>`;
     }
     if (
