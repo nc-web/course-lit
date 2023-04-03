@@ -1,20 +1,15 @@
-
 import { LitElement, html, css } from 'lit';
-import { customElement } from 'lit/decorators.js';
 import '@webcomponents/scoped-custom-element-registry';
 
 // Sections
-import './section-01/Section01.js'
-import './section-02/Section02.js'
+import './section-01/Section01.js';
+import './section-02/Section02.js';
 
-@customElement('lit-scoped-registry-mixin-ts')
-export class LitScopedRegistryMixinTs extends LitElement {
-  
-
+class LitScopedRegistryMixinJs extends LitElement {
   render() {
     return html`
       <main>
-        <h2>LIT - SCOPED REGISTRY MIXIN TS</h2>
+        <h2>LIT - SCOPED REGISTRY MIXIN JS</h2>
         <section-01></section-01>
         <section-02></section-02>
       </main>
@@ -29,3 +24,5 @@ export class LitScopedRegistryMixinTs extends LitElement {
     }
   `;
 }
+
+customElements.define('lit-scoped-registry-mixin-js', LitScopedRegistryMixinJs);
