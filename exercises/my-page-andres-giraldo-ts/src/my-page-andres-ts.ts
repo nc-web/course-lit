@@ -20,7 +20,8 @@ export class MyPageAndresTs extends LitElement {
   @property({ type: String }) header = 'My app';
 
   render() {
-    return html`      <main>
+    return html`     
+     <main>
         ${this._routes.outlet()}
         <a href="${this._routes.link('/login')}">Login</a>
         <index-nav></index-nav>

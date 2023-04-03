@@ -98,7 +98,7 @@ export class NavDesktop extends LitElement {
             </ul>
             <ul class="nav__menu-bottom-ul">
               <li class="nav__menu-bottom-li">
-                <a class="nav__menu-bottom-a" href="/login" ${this._routes.goto()}>Login</a>
+                <a class="nav__menu-bottom-a" href="/login">Login</a>
               </li>
             </ul>
           </div>
