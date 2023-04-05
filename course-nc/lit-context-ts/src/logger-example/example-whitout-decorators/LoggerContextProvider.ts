@@ -8,7 +8,7 @@ export class LoggerContextProvider extends LitElement {
   // create a provider controller and a default logger
   private provider = new ContextProvider(this, loggerContext, {
     log: msg => {
-      console.log(`[my-app] ${msg}`);
+      console.log(`[logger-context-provider] ${msg}`);
     },
   });
 
