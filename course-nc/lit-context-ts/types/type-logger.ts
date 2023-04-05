@@ -1,2 +1,1 @@
-
-export const Logger = 'Logger'
+export const Logger = 'Logger';

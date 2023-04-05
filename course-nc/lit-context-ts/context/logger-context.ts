@@ -1,10 +1,7 @@
-
 import { createContext } from '@lit-labs/context';
 
-import type { Logger } from '../types/type-logger.js';
+export interface Logger {
+  log: (msg: string) => void;
+}
 
-export type { Logger } from '../types/type-logger.js';
-
-export const loggerContext = createContext<Logger>('logger');
-
-
+export const loggerContext = createContext<Logger>('Hello logger');
