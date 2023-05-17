@@ -1,0 +1,5 @@
+
+## INSTALL
+
+    - npm i lit.
+
