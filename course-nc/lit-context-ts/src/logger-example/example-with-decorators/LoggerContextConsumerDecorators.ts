@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 
 // Context
 import { consume } from '@lit-labs/context';
-import { type Logger, loggerContext } from '../../../context/logger-context.js';
+import { type Logger, loggerContext } from '../../../context/context-logger/logger-context.js';
 
 @customElement('logger-context-consumer-decorators')
 export class MyElement extends LitElement {

@@ -1,7 +1,7 @@
-import { LitElement, html } from 'lit';
+import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { ContextConsumer } from '@lit-labs/context';
-import { loggerContext } from '../../../context/logger-context.js';
+import { loggerContext } from '../../../context/context-logger/logger-context.js';
 
 @customElement('logger-context-consumer')
 export class LoggerContextConsumer extends LitElement {
@@ -17,6 +17,18 @@ export class LoggerContextConsumer extends LitElement {
   }
 
   render() {
-    return html` <h4>Logger Context Consumer: ${loggerContext}</h4> `;
+    return html` <p>Logger Context Consumer: ${loggerContext}</p> `;
   }
+
+  static styles = css`
+    :host {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      color: #757575;
+    }
+  `
 }

@@ -10,17 +10,58 @@ import './logger-example/example-with-decorators/LoggerContextConsumerDecorators
 export class LitContextTs extends LitElement {
   render() {
     return html`
-      <h2>LIT CONTEXT</h2>
-      <logger-context-consumer></logger-context-consumer>
-      <!-- <logger-context-consumer-decorators></logger-context-consumer-decorators> -->
+      <div class='context'>
+        <h1>LIT CONTEXT</h1>
+      </div>
+
+      <div class='context-logger'>
+        <h2>Examples Logger Context </h2>
+        <div>
+          <div>
+            <h4>Context sin decorator</h4>
+          </div>
+          <logger-context-consumer></logger-context-consumer>
+        </div>
+
+        <div>
+          <div>
+            <h4>Context con decorator</h4>
+          </div>
+            <logger-context-consumer-decorators></logger-context-consumer-decorators>
+        </div>
+      </div>
+      
     `;
   }
 
   static styles = css`
     :host {
-      display: flex;
+      display: block;
       margin: 0;
       padding: 0;
+    }
+
+    h1 {
+      color: #1565C0;
+    }
+
+    h2 {
+      color: #E91E63;
+    }
+
+    h4 {
+      color: #424242;
+    }
+
+    .context {
+      display: grid;
+      justify-content: center;
+    }
+
+    .context-logger {
+      display: grid;
+      justify-content: center;
+      background-color: #E0E0E0;
     }
   `;
 }
