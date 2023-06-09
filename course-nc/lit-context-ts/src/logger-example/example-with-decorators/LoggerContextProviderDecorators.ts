@@ -16,6 +16,6 @@ export class MyApp extends LitElement {
   };
 
   protected render() {
-    return html` <h4>Context Provider whit decorators</h4> `;
+    return html` ${loggerContext} `;
   }
 }

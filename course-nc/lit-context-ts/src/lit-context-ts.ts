@@ -1,14 +1,28 @@
-import { LitElement, html, css } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { LitElement, html, css, TemplateResult } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+import { provide } from '@lit-labs/context';
+
+// Context
+import { type Logger, loggerContext } from '../context/context-logger/logger-context.js';
 
 // Components
 import './logger-example/example-whitout-decorators/LoggerContextConsumer.js';
 import './logger-example/example-whitout-decorators/LoggerContextProvider.js';
-import './logger-example/example-with-decorators/LoggerContextConsumerDecorators.js';
+
+import './logger-example/example-with-decorators/LoggerContextConsumerDecorators.js'
+// import './logger-example/example-with-decorators/LoggerContextProviderDecorators.js';
 
 @customElement('lit-context-ts')
 export class LitContextTs extends LitElement {
-  render() {
+  @provide({ context: loggerContext })
+  @property({ attribute: false })
+  public logger: Logger = {
+    log: msg => {
+      console.log(`[my-app] ${msg}`);
+    },
+  };
+
+  render(): TemplateResult {
     return html`
       <div class='context'>
         <h1>LIT CONTEXT</h1>
@@ -20,13 +34,14 @@ export class LitContextTs extends LitElement {
           <div>
             <h4>Context sin decorator</h4>
           </div>
-          <logger-context-consumer></logger-context-consumer>
+           
         </div>
 
         <div>
           <div>
             <h4>Context con decorator</h4>
           </div>
+             ${this.logger}
             <logger-context-consumer-decorators></logger-context-consumer-decorators>
         </div>
       </div>
