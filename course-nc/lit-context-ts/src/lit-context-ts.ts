@@ -10,7 +10,7 @@ import './logger-example/example-whitout-decorators/LoggerContextConsumer.js';
 import './logger-example/example-whitout-decorators/LoggerContextProvider.js';
 
 import './logger-example/example-with-decorators/LoggerContextConsumerDecorators.js'
-// import './logger-example/example-with-decorators/LoggerContextProviderDecorators.js';
+import './logger-example/example-with-decorators/LoggerContextProviderDecorators.js';
 
 @customElement('lit-context-ts')
 export class LitContextTs extends LitElement {
@@ -41,8 +41,9 @@ export class LitContextTs extends LitElement {
           <div>
             <h4>Context con decorator</h4>
           </div>
-             ${this.logger}
             <logger-context-consumer-decorators></logger-context-consumer-decorators>
+            <my-app></my-app>
+            ${this.logger.log}
         </div>
       </div>
       

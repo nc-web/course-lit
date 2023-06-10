@@ -1,9 +1,9 @@
-import { LitElement, html } from 'lit';
+import { LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { consume } from '@lit-labs/context';
 
 // Context
-import { consume } from '@lit-labs/context';
-import { Logger, loggerContext } from '../../../context/context-logger/logger-context.js';
+import { loggerContext, Logger,  } from '../../../context/context-logger/logger-context.js';
 
 @customElement('logger-context-consumer-decorators')
 export class MyElement extends LitElement {
