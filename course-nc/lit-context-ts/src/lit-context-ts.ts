@@ -42,6 +42,7 @@ export class LitContextTs extends LitElement {
             <h4>Context con decorator</h4>
           </div>
             <logger-context-consumer-decorators></logger-context-consumer-decorators>
+            <br>
             <my-app></my-app>
             ${this.logger.log}
         </div>
