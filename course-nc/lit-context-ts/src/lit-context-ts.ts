@@ -1,6 +1,6 @@
 import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { provide } from '@lit-labs/context';
+import { ContextRoot, provide } from '@lit-labs/context';
 
 // Context
 import { type Logger, loggerContext, type ILogger, contextLogger } from '../context/context-logger/logger-context.js';
@@ -14,6 +14,9 @@ import './logger-example/example-whitout-decorators/LoggerContextProvider.js';
 
 import './logger-example/example-with-decorators/LoggerContextConsumerDecorators.js'
 import './logger-example/example-with-decorators/LoggerContextProviderDecorators.js';
+
+const root = new ContextRoot();
+root.attach(document.body);
 
 @customElement('lit-context-ts')
 export class LitContextTs extends LitElement {
@@ -63,8 +66,6 @@ export class LitContextTs extends LitElement {
             <br>
             <p>Provider</p>
             <my-app></my-app>
-
-
 
         </div>
       </div>

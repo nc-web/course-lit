@@ -9,5 +9,6 @@ export interface ILogger {
 }
 
 export const loggerContext = createContext<Logger>('Hello logger');
-export const contextLogger = createContext<String>('Null');
+export const contextLogger = createContext<ILogger>('keyLogger');
+// export const contextLogger = createContext<ILogger>(Symbol('keyLogger'));
 
