@@ -1,13 +1,13 @@
 import { createContext } from '@lit-labs/context';
 
 export interface Logger {
-  log: (msg: string) => void;
+  log: (msg: string) => void
 }
 
-export interface interfaceLogger2 {
-  log: (stateGlobalLogger2: number) => void;
+export interface ILogger {
+  stateGlobalLogger: string
 }
 
 export const loggerContext = createContext<Logger>('Hello logger');
-export const contextLogger = createContext<interfaceLogger2>;
+export const contextLogger = createContext<String>('Null');
 

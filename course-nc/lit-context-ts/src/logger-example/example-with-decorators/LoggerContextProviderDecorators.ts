@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { provide } from '@lit-labs/context';
 
 // Context
-import { type Logger, loggerContext, } from '../../../context/context-logger/logger-context.js';
+import { Logger, ILogger,  loggerContext, contextLogger } from '../../../context/context-logger/logger-context.js';
 
 @customElement('my-app')
 export class MyApp extends LitElement {
@@ -15,7 +15,14 @@ export class MyApp extends LitElement {
     },
   };
 
+  @provide({ context: contextLogger })
+  @property()
+  public logger2: String = ''
+
   render() {
-    return html` ${this.logger.log} `;
+    this.logger2 = 'Holita'
+    return html` 
+      ${this.logger2}
+    `;
   }
 }

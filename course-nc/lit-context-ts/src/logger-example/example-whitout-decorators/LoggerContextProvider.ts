@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { ContextProvider } from '@lit-labs/context';
-import { loggerContext, Logger, contextLogger, interfaceLogger2 } from '../../../context/context-logger/logger-context.js';
+import { loggerContext, Logger, contextLogger, ILogger } from '../../../context/context-logger/logger-context.js';
 
 @customElement('logger-context-provider')
 export class LoggerContextProvider extends LitElement {

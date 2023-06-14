@@ -3,7 +3,10 @@ import { customElement, property } from 'lit/decorators.js';
 import { provide } from '@lit-labs/context';
 
 // Context
-import { type Logger, loggerContext } from '../context/context-logger/logger-context.js';
+import { type Logger, loggerContext, type ILogger, contextLogger } from '../context/context-logger/logger-context.js';
+
+// Provider
+// import  from './logger-example/example-with-decorators/LoggerContextProviderDecorators.js'
 
 // Components
 import './logger-example/example-whitout-decorators/LoggerContextConsumer.js';
@@ -14,13 +17,27 @@ import './logger-example/example-with-decorators/LoggerContextProviderDecorators
 
 @customElement('lit-context-ts')
 export class LitContextTs extends LitElement {
-  @provide({ context: loggerContext })
-  @property({ attribute: false })
-  public logger: Logger = {
-    log: msg => {
-      console.log(`[my-app] ${msg}`);
-    },
-  };
+  // @provide({ context: loggerContext })
+  // @property({ attribute: false })
+  // public logger: Logger = {
+  //   log: msg => {
+  //     console.log(`[my-app] ${msg}`);
+  //   },
+  // };
+
+  // @provide({ context: contextLogger })
+  // @property()
+  // public propLogger2: ILogger = {
+  //   log: stateGlobalLogger => {
+  //     console.log(`${stateGlobalLogger}}`);
+  //   },
+  // }
+
+  // constructor() {
+  //   super()
+  //   this.logger2.stateGlobalLogger = 'Null'
+  // }
+  
 
   render(): TemplateResult {
     return html`
@@ -41,10 +58,14 @@ export class LitContextTs extends LitElement {
           <div>
             <h4>Context con decorator</h4>
           </div>
+            <p>Consumer</p>
             <logger-context-consumer-decorators></logger-context-consumer-decorators>
             <br>
+            <p>Provider</p>
             <my-app></my-app>
-            ${this.logger.log}
+
+
+
         </div>
       </div>
       
