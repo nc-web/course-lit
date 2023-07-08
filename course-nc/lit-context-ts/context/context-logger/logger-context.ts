@@ -6,6 +6,7 @@ export interface Logger {
 
 export interface ILogger {
   stateGlobalLogger: string
+  funLogger(): string
 }
 
 export const loggerContext = createContext<Logger>('Hello logger');

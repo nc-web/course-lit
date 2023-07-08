@@ -1,9 +1,9 @@
-import { LitElement, html, css, TemplateResult } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { ContextRoot, provide } from '@lit-labs/context';
+import { LitElement, html, css } from 'lit';
+import { customElement, state, property } from 'lit/decorators.js';
+import { ContextRoot, consume, provide } from '@lit-labs/context';
 
 // Context
-import { type Logger, loggerContext, type ILogger, contextLogger } from '../context/context-logger/logger-context.js';
+import { type ILogger, contextLogger } from '../context/context-logger/logger-context.js';
 
 // Provider
 // import  from './logger-example/example-with-decorators/LoggerContextProviderDecorators.js'
@@ -15,34 +15,17 @@ import './logger-example/example-whitout-decorators/LoggerContextProvider.js';
 import './logger-example/example-with-decorators/LoggerContextConsumerDecorators.js'
 import './logger-example/example-with-decorators/LoggerContextProviderDecorators.js';
 
+import './andres-example/provider-element.js'
+import './andres-example/consumer-element.js'
+
 const root = new ContextRoot();
 root.attach(document.body);
 
 @customElement('lit-context-ts')
 export class LitContextTs extends LitElement {
-  // @provide({ context: loggerContext })
-  // @property({ attribute: false })
-  // public logger: Logger = {
-  //   log: msg => {
-  //     console.log(`[my-app] ${msg}`);
-  //   },
-  // };
 
-  // @provide({ context: contextLogger })
-  // @property()
-  // public propLogger2: ILogger = {
-  //   log: stateGlobalLogger => {
-  //     console.log(`${stateGlobalLogger}}`);
-  //   },
-  // }
+  render() {
 
-  // constructor() {
-  //   super()
-  //   this.logger2.stateGlobalLogger = 'Null'
-  // }
-  
-
-  render(): TemplateResult {
     return html`
       <div class='context'>
         <h1>LIT CONTEXT</h1>
@@ -52,21 +35,25 @@ export class LitContextTs extends LitElement {
         <h2>Examples Logger Context </h2>
         <div>
           <div>
-            <h4>Context sin decorator</h4>
+            <h4>Exercise Context Andres</h4>
           </div>
+          <p>Provider</p>
+            <parent-element></parent-element>
+            <br>
+            <p>Consumer</p>
+            <consumer-element></consumer-element>
            
         </div>
 
         <div>
           <div>
-            <h4>Context con decorator</h4>
+            <h4>Exercise Context Logger</h4>
           </div>
-            <p>Consumer</p>
-            <logger-context-consumer-decorators></logger-context-consumer-decorators>
-            <br>
             <p>Provider</p>
             <my-app></my-app>
-
+            <br>
+            <p>Consumer</p>
+            <logger-context-consumer-decorators></logger-context-consumer-decorators>
         </div>
       </div>
       
