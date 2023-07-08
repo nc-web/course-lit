@@ -30,5 +30,5 @@ export class LoggerContextConsumer extends LitElement {
     p {
       color: #757575;
     }
-  `
+  `;
 }

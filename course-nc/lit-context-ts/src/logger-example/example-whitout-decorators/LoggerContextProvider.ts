@@ -1,7 +1,10 @@
 import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { ContextProvider } from '@lit-labs/context';
-import { loggerContext, Logger, contextLogger, ILogger } from '../../../context/context-logger/logger-context.js';
+import {
+  loggerContext,
+  Logger,
+} from '../../../context/context-logger/logger-context.js';
 
 @customElement('logger-context-provider')
 export class LoggerContextProvider extends LitElement {
@@ -11,7 +14,6 @@ export class LoggerContextProvider extends LitElement {
       console.log(`[logger-context-provider] ${msg}`);
     },
   });
-  
 
   protected render() {
     return html`
