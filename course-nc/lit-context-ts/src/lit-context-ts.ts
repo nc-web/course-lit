@@ -18,6 +18,9 @@ import './andres-example/consumer-element.js';
 import './andres-example-2/provider-element-2.js';
 import './andres-example-2/consumer-element-2.js';
 
+import './harry-context/consumer-context.js';
+import './harry-context/provider-context.js';
+
 const root = new ContextRoot();
 root.attach(document.body);
 
@@ -58,6 +61,24 @@ export class LitContextTs extends LitElement {
           <p>Consumer</p>
           <logger-context-consumer-decorators></logger-context-consumer-decorators>
         </div>
+
+        <div class="context-text-harry">
+          <h2>Examples Harry Context</h2>
+          <div>
+            <div>
+              <h4>Exercise Context Harry</h4>
+            </div>
+            <parent-2></parent-2>
+          </div>
+
+          <br />
+
+          <div>
+            <div>
+              <consumer-2></consumer-2>
+            </div>
+          </div>
+        </div>
       </div>
     `;
   }
@@ -94,6 +115,13 @@ export class LitContextTs extends LitElement {
       display: grid;
       justify-content: center;
       background-color: #e0e0e0;
+    }
+
+    .context-text-harry {
+      display: grid;
+      justify-content: center;
+      background-color: #e0e0e0;
+      margin-bottom: 10rem;
     }
   `;
 }
