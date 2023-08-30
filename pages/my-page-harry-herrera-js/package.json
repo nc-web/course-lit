@@ -1,8 +1,8 @@
 {
-  "name": "my-page-jenny-gomez-js",
-  "description": "Webcomponent my-page-jenny-gomez-js following open-wc recommendations",
+  "name": "my-page-harry-herrera-js",
+  "description": "Webcomponent my-page-harry-herrera-js following open-wc recommendations",
   "license": "MIT",
-  "author": "my-page-jenny-gomez-js",
+  "author": "my-page-harry-herrera-js",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -12,7 +12,7 @@
     "start": "web-dev-server"
   },
   "dependencies": {
-    "lit": "^2.0.2"
+    "lit": "^2.8.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",

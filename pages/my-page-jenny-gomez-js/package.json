@@ -1,18 +1,18 @@
 {
-  "name": "my-page-camilo-js",
-  "description": "Webcomponent my-page-camilo-js following open-wc recommendations",
+  "name": "my-page-jenny-gomez-js",
+  "description": "Webcomponent my-page-jenny-gomez-js following open-wc recommendations",
   "license": "MIT",
-  "author": "my-page-camilo-js",
+  "author": "my-page-jenny-gomez-js",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
-    "lint-fix": "eslint --ext .js,.html . --fix --ignore-path .gitignore && prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "format": "eslint --ext .js,.html . --fix --ignore-path .gitignore && prettier \"**/*.js\" --write --ignore-path .gitignore",
     "analyze": "cem analyze --litelement",
-    "dev": "web-dev-server"
+    "start": "web-dev-server"
   },
   "dependencies": {
-    "lit": "^2.0.2"
+    "lit": "^2.8.0"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
