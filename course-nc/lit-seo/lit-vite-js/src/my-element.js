@@ -32,6 +32,7 @@ export class MyElement extends LitElement {
   render() {
     return html`
       <div>
+      <slot></slot>
         <a href="https://vitejs.dev" target="_blank">
           <img src=${viteLogo} class="logo" alt="Vite logo" />
         </a>
@@ -39,7 +40,8 @@ export class MyElement extends LitElement {
           <img src=${litLogo} class="logo lit" alt="Lit logo" />
         </a>
       </div>
-      <slot></slot>
+      <h3>COUNTER</h3>
+      <p>Test Static Side Generation whit Lit & Vite</p>
       <div class="card">
         <button @click=${this._onClick} part="button">
           count is ${this.count}
@@ -91,6 +93,8 @@ export class MyElement extends LitElement {
       a:hover {
         color: #535bf2;
       }
+
+      
 
       ::slotted(h1) {
         font-size: 3.2em;
