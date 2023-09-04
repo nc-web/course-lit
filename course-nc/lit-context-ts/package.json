@@ -12,7 +12,7 @@
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\""
   },
   "dependencies": {
-    "@lit-labs/context": "^0.3.3",
+    "@lit-labs/context": "^0.4.0",
     "lit": "^2.7.6"
   },
   "devDependencies": {
