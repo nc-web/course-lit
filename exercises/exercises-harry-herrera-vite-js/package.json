@@ -13,6 +13,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@lit-labs/context": "^0.4.1",
+    "i18next": "^23.5.1",
     "lit": "^2.7.6"
   },
   "devDependencies": {
