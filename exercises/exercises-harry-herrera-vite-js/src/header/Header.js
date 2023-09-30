@@ -1,7 +1,11 @@
-/* eslint-disable no-undef */
+
 import { LitElement, html, css } from "lit";
 
-import i18next from "i18next";
+// Manejador de Traducciones
+import i18next from 'i18next';
+
+// Context Mediante Props
+import "../context/context-prop.js";
 
 export class HeaderTest01 extends LitElement {
   i18next = i18next.init({
@@ -10,51 +14,63 @@ export class HeaderTest01 extends LitElement {
     resources: {
       en: {
         translation: {
-          bienvenida: 'Welcome',
+          bienvenida: "Welcome",
           title: "About Us",
-          p: "cellphone",
+          celular: "cellphone",
           presentacion: "My name is jenny",
           acerca: "I am 30 years old",
           variables: "{{indicativo}} {{number}}",
         },
+        card_text: {
+          card_text_title: "I am a card!",
+          card_text_description: "Can I change my Text Language! :D",
+        }
       },
       es: {
         translation: {
-          bienvenida: 'Bienvenido',
+          bienvenida: "Bienvenido",
           title: "Acerca de",
-          p: "celular",
+          celular: "celular",
           presentacion: "Mi nombre harry",
           acerca: "tengo 20 años",
           variables: "{{indicativo}} {{number}}",
         },
+        // Card Header
+        card_text: {
+          card_text_title: "Soy un card!",
+          card_text_description: "Puedo cambiar mi Texto de Idioma! :D",
+        }
       },
       de: {
         translation: {
-          bienvenida: 'Willkommen',
+          bienvenida: "Willkommen",
           title: "Um",
-          p: "Handy",
+          celular: "Handy",
           presentacion: "Mein Name Richtofen",
           acerca: "Ich bin 50 Jahre alt",
           variables: " {{indicativo}} {{number}}",
         },
+        card_text: {
+          card_text_title: "Ich bin eine Karte!",
+          card_text_description: "Kann ich meine Textsprache ändern?! :D",
+        }
       },
     },
   });
 
   static get properties() {
     return {
-      propLanguageSelect: { type: String },
+      propLanguageSelect: { type: String, reflect: true },
     };
   }
 
   constructor() {
     super();
-    this.propLanguageSelect = "es";
-  }
-  
-  changeLanguage(language) {
-    this.propLanguageSelect = language;
-    this.updateTranslations();
+    window.addEventListener("DOMContentLoaded", () => {
+      this.propLanguageSelect = localStorage.getItem("language") || "es";
+      this.updateTranslations();
+      // console.log("DOM Loaded Data", this.propLanguageSelect);
+    });
   }
 
   updateTranslations() {
@@ -64,28 +80,40 @@ export class HeaderTest01 extends LitElement {
     });
   }
 
+  changeLanguage(language) {
+    // console.log(`changeLanguage(${language}) llamado`);
+    this.propLanguageSelect = language;
+    localStorage.setItem("language", language);
+    const globalState = this.shadowRoot.querySelector("global-state");
+    globalState.changeLanguage(language);
+    this.dispatchEvent(
+      new CustomEvent("language-changed", { detail: language })
+    );
+    this.updateTranslations();
+  }
+
   render() {
     return html`
-  <section class="section">
-      <div class="languaje">
-        <div>
-          <button class="btn-en" @click="${() => this.changeLanguage("en")}">
-            EN
-          </button>
-        </div>
+      <section class="section">
+        <div class="languaje">
+          <div>
+            <button class="btn-en" @click="${() => this.changeLanguage("en")}">
+              EN
+            </button>
+          </div>
 
-        <div>
-          <button class="btn-es" @click="${() => this.changeLanguage("es")}">
-            ES
-          </button>
-        </div>
+          <div>
+            <button class="btn-es" @click="${() => this.changeLanguage("es")}">
+              ES
+            </button>
+          </div>
 
-        <div>
-          <button class="btn-de" @click="${() => this.changeLanguage("de")}">
-            DE
-          </button>
+          <div>
+            <button class="btn-de" @click="${() => this.changeLanguage("de")}">
+              DE
+            </button>
+          </div>
         </div>
-      </div>
 
         <div>
           <h1>${i18next.t("bienvenida")}</h1>
@@ -99,11 +127,21 @@ export class HeaderTest01 extends LitElement {
             <div>
               <p>${i18next.t("presentacion")}</p>
             </div>
+            <div class="card">
+              <div>
+              <h2 class="card__title">${i18next.t('card_text_title', { ns: 'card_text' })}</h2>
+              </div>
+              <div>
+                <div>
+                  <p class="card__text">${i18next.t('card_text_description', { ns: 'card_text' })}</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div>
             <div>
-              <h4>Mission Us</h4>
+              <a href="/missions.html"><h4>Mission Us</h4></a>
             </div>
             <div>
               <p>${i18next.t("acerca")}</p>
@@ -115,12 +153,17 @@ export class HeaderTest01 extends LitElement {
               <a href="/contact.html"><h4>Contact Us</h4></a>
             </div>
             <div class="footer__text-container">
-              <p>${i18next.t("p")}: + ${i18next.t("variables", {indicativo: "57", number:"333"})}</p>
+              <p>
+                ${i18next.t("celular")}: +
+                ${i18next.t("variables", { indicativo: "57", number: "333" })}
+              </p>
               <p>email: example@example.com</p>
               <p>visit my page: example.com</p>
             </div>
           </div>
         </div>
+
+        <global-state></global-state>
       </section>
     `;
   }
@@ -141,6 +184,25 @@ export class HeaderTest01 extends LitElement {
       align-items: center;
       justify-content: center;
       gap: 3rem;
+    }
+
+    .card {
+      width: 18rem;
+      height: 18rem;
+      padding: 2rem;
+      background-color: crimson;
+    }
+
+    .card__title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .card__text {
+      font-size: 1.5rem;
+      font-weight: bolder;
+      color: white;
     }
 
     .footer__text-container {
