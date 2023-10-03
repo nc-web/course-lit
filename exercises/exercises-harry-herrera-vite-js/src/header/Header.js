@@ -24,6 +24,7 @@ export class HeaderTest01 extends LitElement {
         card_text: {
           card_text_title: "I am a card!",
           card_text_description: "Can I change my Text Language! :D",
+          card_text_button: "Save",
         }
       },
       es: {
@@ -39,6 +40,7 @@ export class HeaderTest01 extends LitElement {
         card_text: {
           card_text_title: "Soy un card!",
           card_text_description: "Puedo cambiar mi Texto de Idioma! :D",
+          card_text_button: "Guardar",
         }
       },
       de: {
@@ -53,6 +55,7 @@ export class HeaderTest01 extends LitElement {
         card_text: {
           card_text_title: "Ich bin eine Karte!",
           card_text_description: "Kann ich meine Textsprache ändern?! :D",
+          card_text_button: "Ich",
         }
       },
     },
@@ -135,6 +138,9 @@ export class HeaderTest01 extends LitElement {
                 <div>
                   <p class="card__text">${i18next.t('card_text_description', { ns: 'card_text' })}</p>
                 </div>
+                <div class="card__button">
+                  <button class="button">${i18next.t('card_text_button', {ns: 'card_text'})}</button>
+                </div>
               </div>
             </div>
           </div>
@@ -203,6 +209,18 @@ export class HeaderTest01 extends LitElement {
       font-size: 1.5rem;
       font-weight: bolder;
       color: white;
+    }
+
+    .card__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .button {
+      color: crimson;
+      padding: 2rem;
+      font-size: 2rem;
     }
 
     .footer__text-container {

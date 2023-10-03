@@ -1,19 +1,26 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css } from "lit";
+
+// manejador de Divisas
+import currency from "../divisas/currency";
+
+import { convertCurrency, formatCurrency } from "../divisas/currency-utils";
+
+// Convertidor de Tasas
+// import { convertCurrency } from "../divisas/convert-currency";
 
 // Manejador de Traducciones
-import i18next from 'i18next';
+import i18next from "i18next";
 
 // Traducciones
-import translation from '../translates/languaje';
+import translation from "../translates/languaje";
 
 // Context Mediante Props
 import "../context/context-prop.js";
 
 export class MisionsTest01 extends LitElement {
-
   i18next = i18next.init({
-    fallbackLng: ['en', 'es'],
-    lng: 'en',
+    fallbackLng: ["en", "es"],
+    lng: "en",
     resources: translation,
   });
 
@@ -28,7 +35,8 @@ export class MisionsTest01 extends LitElement {
     window.addEventListener("DOMContentLoaded", () => {
       this.propLanguageSelect = localStorage.getItem("language") || "es";
       this.updateTranslations();
-      // console.log("DOM Loaded Data", this.propLanguageSelect);
+
+      this.updateFormattedValue();
     });
   }
 
@@ -51,14 +59,52 @@ export class MisionsTest01 extends LitElement {
     this.updateTranslations();
   }
 
-  render() {
+  firstUpdated() {
+    const currencySelect = this.shadowRoot.querySelector("#currencySelect");
+    currencySelect.addEventListener("change", (e) => {
+      const selectedCurrency = e.target.value;
+      this.updateFormattedValue(selectedCurrency);
+    });
 
-  const welcomeText = i18next.t('bienvenida');
-  const presentationText = i18next.t('presentacion');
+    const amountInput = this.shadowRoot.querySelector("#amount-input");
+    amountInput.addEventListener("input", () => {
+      this.updateFormattedValue();
+    });
+  }
+
+  updateFormattedValue(selectedCurrency) {
+    if (typeof selectedCurrency === "undefined") {
+      // Si selectedCurrency es undefined, establece el valor predeterminado a 'us' (DOL).
+      selectedCurrency = "us";
+    }
+    
+    const amountInput = this.shadowRoot.querySelector("#amount-input");
+    const amountFormatted = this.shadowRoot.querySelector("#amount-formatted");
+
+    // Obtén el valor del monto ingresado por el usuario.
+    const inputValue = parseFloat(amountInput.value) || 0;
+
+    // const formatData = {
+    //   regionSelectedCode: selectedCurrency,
+    //   value: inputValue,
+    // };
+
+    // Llama a la función `currency` para formatear el valor.
+    const convertedAmount = convertCurrency(inputValue, 'us', selectedCurrency);
+
+    // Formatea el valor convertido con el símbolo de la moneda
+    const formattedValue = formatCurrency(convertedAmount, selectedCurrency);
+  
+    // Actualiza el contenido del elemento #amount-formatted con el resultado formateado.
+    amountFormatted.textContent = formattedValue;
+  }
+
+  render() {
+    const welcomeText = i18next.t("bienvenida");
+    const presentationText = i18next.t("presentacion");
 
     return html`
       <section class="section">
-        
         <div class="languaje">
           <div>
             <button class="btn-en" @click="${() => this.changeLanguage("en")}">
@@ -91,14 +137,56 @@ export class MisionsTest01 extends LitElement {
             <div>
               <p>${presentationText}</p>
             </div>
+            <div class="card">
+              <div>
+                <h2 class="card__title">
+                  ${i18next.t("card_text_title", { ns: "card_text" })}
+                </h2>
+              </div>
+              <div>
+                <div>
+                  <p class="card__text">
+                    ${i18next.t("card_text_description", { ns: "card_text" })}
+                  </p>
+                  <div class="input-container">
+                    <label for="amount-input">Importe (sin formato)</label>
+                    <input
+                      id="amount-input"
+                      type="number"
+                      placeholder="por ejemplo 0"
+                      min="0"
+                      step="0.01"
+                      value="0"
+                    />
+                  </div>
+                  <div>
+                    <select id="currencySelect" name="currencySelect">
+                      <option data-region="us" value="us">DOLAR</option>
+                      <option data-region="cop" value="cop">COP</option>
+                      <option data-region="eu" value="eu">EUR</option>
+                      <option data-region="jp" value="jp">YEN</option>
+                      <option data-region="cn" value="cn">YUAN</option>
+                    </select>
+                  </div>
+
+                  <h2>Resultado:</h2>
+                  <div id="amount-formatted">1.300,75 €</div>
+                </div>
+                <div class="card__button">
+                  <button class="button">
+                    ${i18next.t("card_text_button", { ns: "card_text" })}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div>
             <div>
               <a href="/contact.html"><h4>Contact Us</h4></a>
             </div>
+          </div>
         </div>
-      </div>
 
         <global-state></global-state>
       </section>
@@ -123,6 +211,36 @@ export class MisionsTest01 extends LitElement {
       gap: 3rem;
     }
 
+    .card {
+      width: 65rem;
+      height: 18rem;
+      padding: 2rem;
+      background-color: crimson;
+    }
+
+    .card__title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .card__text {
+      font-size: 1.5rem;
+      font-weight: bolder;
+      color: white;
+    }
+
+    .card__button {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+    }
+
+    .button {
+      color: crimson;
+      font-size: 2rem;
+    }
+
     .footer__text-container {
       display: grid;
       align-items: center;
@@ -131,4 +249,4 @@ export class MisionsTest01 extends LitElement {
     }
   `;
 }
-customElements.define('misions-test-01', MisionsTest01);
+customElements.define("misions-test-01", MisionsTest01);
