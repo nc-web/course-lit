@@ -1,8 +1,10 @@
+import currency from "currency.js";
+
 // Define las tasas de cambio
 const exchangeRates = {
   us: 1,      // Tasa de cambio de dólar a sí mismo (1 USD = 1 USD)
-  cop: 4194.89, // Tasa de cambio de dólar a pesos colombianos
-  eu: 0.85,   // Tasa de cambio de dólar a euro (1 USD = 0.85 EUR)
+  cop: 4220.06, // Tasa de cambio de dólar a pesos colombianos
+  eu: 0.95,   // Tasa de cambio de dólar a euro (1 USD = 0.95 EUR)
   jp: 110.63, // Tasa de cambio de dólar a yen (1 USD = 110.63 JPY)
   cn: 6.45,   // Tasa de cambio de dólar a yuan (1 USD = 6.45 CNY)
 };
@@ -19,32 +21,61 @@ export function convertCurrency(amount, fromCurrency, toCurrency) {
 
 // Función para formatear moneda
 export function formatCurrency(value, currencyCode) {
-  let currencySymbol;
 
+  let formatOptions = {};
   // Asigna el símbolo de moneda correspondiente según el código de moneda
   switch (currencyCode) {
-    case "us":{
-      currencySymbol = "$";
-      
-    }
+    case "us": 
+      formatOptions = {
+        symbol: "$",
+        pattern: "!#",
+        separator: ",",
+        decimal: ".",
+      };
       break;
     case "cop":
-      currencySymbol = "COP";
+      formatOptions = {
+        symbol: "$",
+        pattern: "!#",
+        separator: ",",
+        decimal: ".",
+      };
       break;
     case "eu":
-      currencySymbol = "€";
+      formatOptions = {
+        symbol: "€",
+        pattern: "# !",
+        separator: ".",
+        decimal: ",",
+      };
       break;
     case "jp":
-      currencySymbol = "¥";
+      formatOptions = {
+        symbol: "¥",
+        pattern: "!#",
+        separator: ",",
+        decimal: ".",
+      };
       break;
     case "cn":
-      currencySymbol = "¥";
+      formatOptions = {
+        symbol: "¥",
+        pattern: "!#",
+        separator: ",",
+        decimal: ".",
+      };
       break;
     default:
-      currencySymbol = "";
+      formatOptions = {
+        symbol: "$",
+        pattern: "!#",
+        separator: ",",
+        decimal: ".",
+      };
       break;
   }
 
   // Formatea el valor con el símbolo de moneda
-  return `${currencySymbol} ${value}`;
+  const formatValue = currency(value, formatOptions).format()
+  return formatValue
 }

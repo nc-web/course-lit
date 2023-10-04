@@ -12,7 +12,7 @@ const translation = {
       card_text_title: "I am a card!",
       card_text_description: "Can I change my Text Language! :D",
       card_text_button: "Save",
-    }
+    },
   },
   es: {
     translation: {
@@ -28,7 +28,7 @@ const translation = {
       card_text_title: "Soy un card!",
       card_text_description: "Puedo cambiar mi Texto de Idioma! :D",
       card_text_button: "Guardar",
-    }
+    },
   },
   de: {
     translation: {
@@ -43,7 +43,7 @@ const translation = {
       card_text_title: "Ich bin eine Karte!",
       card_text_description: "Kann ich meine Textsprache ändern?! :D",
       card_text_button: "Ich",
-    }
+    },
   },
 };
 

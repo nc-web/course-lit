@@ -35,8 +35,6 @@ export class MisionsTest01 extends LitElement {
     window.addEventListener("DOMContentLoaded", () => {
       this.propLanguageSelect = localStorage.getItem("language") || "es";
       this.updateTranslations();
-
-      this.updateFormattedValue();
     });
   }
 
@@ -70,12 +68,14 @@ export class MisionsTest01 extends LitElement {
     amountInput.addEventListener("input", () => {
       this.updateFormattedValue();
     });
+
+    this.updateFormattedValue();
   }
 
   updateFormattedValue(selectedCurrency) {
     if (typeof selectedCurrency === "undefined") {
       // Si selectedCurrency es undefined, establece el valor predeterminado a 'us' (DOL).
-      selectedCurrency = "us";
+      selectedCurrency = "cop";
     }
     
     const amountInput = this.shadowRoot.querySelector("#amount-input");
@@ -83,11 +83,6 @@ export class MisionsTest01 extends LitElement {
 
     // Obtén el valor del monto ingresado por el usuario.
     const inputValue = parseFloat(amountInput.value) || 0;
-
-    // const formatData = {
-    //   regionSelectedCode: selectedCurrency,
-    //   value: inputValue,
-    // };
 
     // Llama a la función `currency` para formatear el valor.
     const convertedAmount = convertCurrency(inputValue, 'us', selectedCurrency);
@@ -149,7 +144,7 @@ export class MisionsTest01 extends LitElement {
                     ${i18next.t("card_text_description", { ns: "card_text" })}
                   </p>
                   <div class="input-container">
-                    <label for="amount-input">Importe (sin formato)</label>
+                    <label for="amount-input">Valor (sin formato)</label>
                     <input
                       id="amount-input"
                       type="number"

@@ -13,29 +13,29 @@ const formatCurrency = (formatData) => {
       };
       break;
     case "cop":
-        formatOptions = {
-          symbol: "$",
-          pattern: "!#",
-          separator: ",",
-          decimal: ".",
-        };
-        break;
-        case "jp":
-    formatOptions = {
-      symbol: "¥",
-      pattern: "!#",
-      separator: ",",
-      decimal: ".",
-    };
-    break;
-  case "cn":
-    formatOptions = {
-      symbol: "¥",
-      pattern: "!#",
-      separator: ",",
-      decimal: ".",
-    };
-    break;
+      formatOptions = {
+        symbol: "$",
+        pattern: "!#",
+        separator: ",",
+        decimal: ".",
+      };
+      break;
+    case "jp":
+      formatOptions = {
+        symbol: "¥",
+        pattern: "!#",
+        separator: ",",
+        decimal: ".",
+      };
+      break;
+    case "cn":
+      formatOptions = {
+        symbol: "¥",
+        pattern: "!#",
+        separator: ",",
+        decimal: ".",
+      };
+      break;
     case "eu":
     default:
       formatOptions = {
@@ -46,10 +46,9 @@ const formatCurrency = (formatData) => {
       };
       break;
   }
-  
+
   const formattedValue = currency(formatData.value, formatOptions).format();
   return formattedValue;
 };
 
 export default formatCurrency;
-
