@@ -16,7 +16,8 @@
     "@lit-labs/context": "^0.4.1",
     "currency.js": "^2.0.4",
     "i18next": "^23.5.1",
-    "lit": "^2.7.6"
+    "lit": "^2.7.6",
+    "sweetalert2": "^11.7.32"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.4.2",

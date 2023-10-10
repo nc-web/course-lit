@@ -4,6 +4,9 @@ import { LitElement, html, css } from "lit";
 // Manejador de Traducciones
 import i18next from 'i18next';
 
+// SweetAlert2
+import Swal from 'sweetalert2'
+
 // Context Mediante Props
 import "../context/context-prop.js";
 
@@ -64,6 +67,7 @@ export class HeaderTest01 extends LitElement {
   static get properties() {
     return {
       propLanguageSelect: { type: String, reflect: true },
+      propButton: { type: Boolean, reflect: true },
     };
   }
 
@@ -74,7 +78,27 @@ export class HeaderTest01 extends LitElement {
       this.updateTranslations();
       // console.log("DOM Loaded Data", this.propLanguageSelect);
     });
+
+    this.propButton = false;
   }
+
+  handleButtonClick() {
+    if (this.propButton === false) {
+
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      this.propButton = true;
+      console.log(this.propButton);
+  } else {
+    this.propButton = false;
+    console.log(this.propButton);
+  }
+}
 
   updateTranslations() {
     i18next.changeLanguage(this.propLanguageSelect, (err, t) => {
@@ -139,7 +163,7 @@ export class HeaderTest01 extends LitElement {
                   <p class="card__text">${i18next.t('card_text_description', { ns: 'card_text' })}</p>
                 </div>
                 <div class="card__button">
-                  <button class="button">${i18next.t('card_text_button', {ns: 'card_text'})}</button>
+                  <button @click=${this.handleButtonClick} class="button">${i18next.t('card_text_button', {ns: 'card_text'})}</button>
                 </div>
               </div>
             </div>
