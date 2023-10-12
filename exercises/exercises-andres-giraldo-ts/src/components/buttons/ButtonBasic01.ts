@@ -1,10 +1,20 @@
-import { LitElement, html, css } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { LitElement, html, css } from 'lit'
+import { customElement } from 'lit/decorators.js'
+
+// Vite
+const Vite = new URL('/vite.svg', import.meta.url).href
+
+// Lite
+import Lit from '../../assets/lit.svg'
 
 @customElement('button-basic-01')
 export class ButtonBasic01 extends LitElement {
   render() {
-    return html` <button><slot></slot></button> `;
+    return html` <button>
+        <img src=${Vite} alt='Vite'>
+        <slot>BUTTON BASIC 01</slot>
+        <img src=${Lit} alt='Lit'>
+      </button> `
   }
 
   static styles = css`
@@ -27,5 +37,5 @@ export class ButtonBasic01 extends LitElement {
     button:hover {
       background-color: #4dd0e1;
     }
-  `;
+  `
 }
