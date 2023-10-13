@@ -2,15 +2,15 @@
 import { LitElement, html, css } from 'lit'
 
 export class ButtonHover01 extends LitElement {
-    render() {
-        return html`
+  render() {
+    return html`
             <div>
-                <button class='button'><slot></slot></button>
+                <button class='button'><slot>BUTTON HOVER 01</slot></button>
             </div>
         `
-    }
+  }
 
-    static styles = css` 
+  static styles = css` 
         :host {
             display: inline-block;
             margin: 0;
@@ -23,7 +23,6 @@ export class ButtonHover01 extends LitElement {
             justify-content: center;
             align-items: center;
             min-height: 0;
-            background: #975;
         }
 
         .button {
