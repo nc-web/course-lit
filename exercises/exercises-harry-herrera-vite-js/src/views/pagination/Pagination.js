@@ -102,10 +102,7 @@ export class PaginationTest01 extends LitElement {
       max-width: 600px;
       min-height: 140px;
       min-width: 595px;
-
-      background-color: white;
       border-radius: 10px;
-      border: 1px solid #e3e3e3;
       margin: 0 auto;
     }
     .tabs {
@@ -113,7 +110,6 @@ export class PaginationTest01 extends LitElement {
     }
 
     .content .item {
-      opacity: 0;
       visibility: hidden;
       transition: all 0.3s;
       position: absolute;
@@ -135,33 +131,25 @@ export class PaginationTest01 extends LitElement {
       text-align: center;
       border: none;
       border-bottom: 0.5pt solid #1d1e22;
-      color: #e7e9f5;
+      color: #161929;
       display: inline-flex;
-      -webkit-box-pack: center;
       padding: 5pt 10pt;
-      vertical-align: top;
       justify-content: flex-start;
       background: #333;
-      box-shadow: 1px 1px 2px 1px #231f20;
-      text-transform: uppercase;
-      font-weight: 300;
-      font-size: 8pt;
+      font-size: 1rem;
       background: #26292c;
       margin-bottom: 0.5px;
       border-radius: 7px 7px 0 0;
       border-top: 1px solid #3b3d3f;
-      letter-spacing: 0.1666666667em;
       font-family: "antique-olive";
       cursor: pointer;
     }
 
     .content {
-      margin: 0px auto;
       text-align: left;
       line-height: 20px;
       height: 240px;
       border-radius: 5px;
-      display: block;
       padding: 1.25rem;
       z-index: 2;
       border-top: 1px solid #3b3d3f;
