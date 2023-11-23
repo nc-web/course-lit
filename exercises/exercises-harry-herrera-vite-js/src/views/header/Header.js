@@ -218,6 +218,15 @@ export class HeaderTest01 extends LitElement {
           </div>
         </div>
 
+        <div>
+            <div>
+              <a href="/invoice.html"><h4>Factura</h4></a>
+            </div>
+            <div>
+              <p>${i18next.t('acerca')}</p>
+            </div>
+          </div>
+
         <global-state></global-state>
       </section>
     `

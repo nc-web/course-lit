@@ -2,13 +2,13 @@
 import { LitElement, html, css } from 'lit'
 
 export class ButtonBasic06 extends LitElement {
-    render() {
-        return html`
+  render() {
+    return html`
             <button><slot></slot></button>
         `
-    }
+  }
 
-    static styles = css`
+  static styles = css`
         :host{
             display: inline-block;
             margin: 1rem;
