@@ -1,14 +1,14 @@
 
-import { LitElement ,html, css } from 'lit'
+import { LitElement, html, css } from 'lit'
 
 export class ButtonRound06 extends LitElement {
-    render() {
-        return html`
+  render() {
+    return html`
             <button><slot></slot></button>
         `
-    }
+  }
 
-        static styles = css`
+  static styles = css`
             :host{
                 display: inline-block;
                 margin: 1rem;
@@ -29,6 +29,6 @@ export class ButtonRound06 extends LitElement {
             background-color: #03A9F4;
         }
     `
-} 
+}
 
 customElements.define('button-round-06', ButtonRound06)
