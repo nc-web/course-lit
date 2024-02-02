@@ -13,7 +13,8 @@ body {
 
   scroll-behavior: smooth;
 
-  background-color: aquamarine;
+  color: beige;
+  background-color: #212121;
 }
 
 * {
