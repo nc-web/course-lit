@@ -1,0 +1,44 @@
+{
+  "name": "exercices-harry-herrera-vite-js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook",
+    "test-coverage-storybook": "npm run test-storybook -- --coverage",
+    "chromatic": "npx chromatic --project-token=chpt_fab8bc76ac2c4a4"
+  },
+  "dependencies": {
+    "@lit-labs/context": "^0.4.1",
+    "currency.js": "^2.0.4",
+    "i18next": "^23.5.1",
+    "lit": "^3.1.0",
+    "sweetalert2": "^11.6.13"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^7.5.3",
+    "@storybook/addon-coverage": "^1.0.0",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/test-runner": "^0.15.1",
+    "@storybook/web-components": "^7.5.3",
+    "@storybook/web-components-vite": "^7.5.3",
+    "chromatic": "^9.1.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.5.3",
+    "vite": "^4.4.5"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "exercices-harry-herrera-vite-js@0.0.0"
+}
