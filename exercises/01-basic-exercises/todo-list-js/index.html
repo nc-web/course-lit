@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Vite + Lit</title>
-    <link rel="stylesheet" href="./src/index.css" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/assets/css/index.css" />
+    
+    <!-- Components -->
+    <script type="module" src="./src/todo-list-basic/TodoListBasic.js"></script>
     <script type="module" src="/src/my-element.js"></script>
   </head>
   <body>
-    <my-element>
-      <h1>Vite + Lit</h1>
-    </my-element>
+
+    <todo-list-basic></todo-list-basic>
+  
   </body>
 </html>
