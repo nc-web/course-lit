@@ -12,6 +12,9 @@ export class TodoListAdvanced extends LitElement {
   @property({type: String})
     propInputTask
 
+  @property({type: Number})
+    propIDArray
+
   @property({type: Boolean})
     propHideCompleted
 
@@ -19,11 +22,13 @@ export class TodoListAdvanced extends LitElement {
     super()
     this.stateTasks = []
     this.propInputTask = ''
+    this.propIDArray = 0
     this.propHideCompleted = false
   }
 
   // VIEWS
   render() {
+    const items = this.stateTasks
     return html`
             <section class='tla'>
                 
@@ -37,10 +42,10 @@ export class TodoListAdvanced extends LitElement {
                 </form>
 
                 <div class='tla__taks'>
-                  ${this.stateTasks.map(x => html`
+                  ${items.map((x: string, i: number) => html`
                     <div class='tla__task_items'>
-                      <p key=${x} >${x}</p>
-                      <svg @click=${this.handleDeleteTask(x)} class='tla__task_items_svgDelete' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Delete task</title>  <path fill='#D50000' d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
+                      <p key=${i}>${i} - ${x}</p>
+                      <svg @click=${this.handleDeleteTask(i)} class='tla__task_items_svgDelete' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Delete task</title>  <path fill='#D50000' d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
                       <svg @click=${this.handleEditTask} class='tla__task_items_svgEdit' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Edit task</title> <path fill='#FFAB00' d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                       <svg @click=${this.handleChekedTask} class='tla__task_items_svgCheked' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Complete task</title><path fill='#64DD17' d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" /></svg>
                     </div>  
@@ -69,9 +74,12 @@ export class TodoListAdvanced extends LitElement {
     this.requestUpdate()
   }
 
-  handleDeleteTask(x: {}) {
+  handleDeleteTask(i: number) {
     // this.stateTasks
-    console.log('Deleted id:', x)
+    // const input = e.target as HTMLInputElement
+    this.propIDArray = i
+    // console.log('Deleted id:', this.propIDArray)
+    console.log('Deleted id:', this.propIDArray)
   }
 
   handleEditTask() {
