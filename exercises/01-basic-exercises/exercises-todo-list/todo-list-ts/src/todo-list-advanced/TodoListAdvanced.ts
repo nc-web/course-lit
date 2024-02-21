@@ -2,33 +2,58 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, state, property, query } from 'lit/decorators.js'
 
+
+interface ITasks {
+  id: number,
+  task: string,
+  status: boolean
+}
+
+type TypeTasks = ITasks
+
+
 @customElement('todo-list-advanced')
 export class TodoListAdvanced extends LitElement {
 
   // STATE - PROPS - LIFE CYCLE
   @state()
-  private stateTasks: string[]
+  private stateTasks = [
+      {
+        id: 1,
+        task: 'Deafult',
+        status: false
+      }
+    ]
 
-  @property({type: String})
-    propInputTask
+  @property({attribute: false})
+    propTasks = {
+      id: {type: Number},
+      task: {type: String},
+      status: {type: Boolean}
+    }
 
   @property({type: Number})
-    propIDArray
+    propID
+
+  @property({type: String})
+    propTask
 
   @property({type: Boolean})
     propHideCompleted
 
   constructor() {
     super()
+    // this.propTasks = []
     this.stateTasks = []
-    this.propInputTask = ''
-    this.propIDArray = 0
+    this.propTask = ''
+    this.propID = 0
     this.propHideCompleted = false
   }
 
   // VIEWS
   render() {
     const items = this.stateTasks
+    // const items2 = this.propTasks
     return html`
             <section class='tla'>
                 
@@ -38,14 +63,14 @@ export class TodoListAdvanced extends LitElement {
 
                 <form class='tla__form'>
                   <input id='input_task' @change=${this.onChangeTask} class='tla__form_inputTask' type='text' placeholder='Writer task'/>
-                  <button @click=${this.handleButtonTask} class='tla__form_buttonTask' type='button'>Add task</button>
+                  <button @click=${this.handleAddTask} class='tla__form_buttonTask' type='button'>Add task</button>
                 </form>
 
                 <div class='tla__taks'>
-                  ${items.map((x: string, i: number) => html`
+                  ${items.map((x) => html`
                     <div class='tla__task_items'>
-                      <p key=${i}>${i} - ${x}</p>
-                      <svg @click=${this.handleDeleteTask(i)} class='tla__task_items_svgDelete' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Delete task</title>  <path fill='#D50000' d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
+                      <p>${x.task}</p>
+                      <svg @click=${this.handleDeleteTask} class='tla__task_items_svgDelete' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Delete task</title>  <path fill='#D50000' d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
                       <svg @click=${this.handleEditTask} class='tla__task_items_svgEdit' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Edit task</title> <path fill='#FFAB00' d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                       <svg @click=${this.handleChekedTask} class='tla__task_items_svgCheked' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Complete task</title><path fill='#64DD17' d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" /></svg>
                     </div>  
@@ -62,24 +87,48 @@ export class TodoListAdvanced extends LitElement {
 
   onChangeTask() {
     const inputTask = this.queryInput.value
-    this.propInputTask = inputTask
-    console.log(this.propInputTask)
+    this.propTask = inputTask
+    console.log(this.propTask)
     this.requestUpdate()
   }
 
-  handleButtonTask() {
-    this.stateTasks.push(this.propInputTask)
-    this.queryInput.value = ''
-    console.log(this.stateTasks)
-    this.requestUpdate()
+  handleAddTask() {
+    // this.stateTasks.push(this.propTask)
+    // this.queryInput.value = ''
+    // console.log(this.stateTasks)
+    // this.requestUpdate()
+
+    // items.id = 1
+    // items.task = this.propTask
+    // items.status = false
+
+
+
+
+    // items.push({
+    //   id: 1,
+    //   task: this.propTask,
+    //   status: false
+    // })
+
+    this.stateTasks.push({
+      id: 1,
+      task: this.propTask,
+      status: false
+    }
+    )
+
+    // tasks.id = 1
+    // tasks.task = this.propTask
+    // tasks.status = false
   }
 
-  handleDeleteTask(i: number) {
+  handleDeleteTask(e: Event) {
     // this.stateTasks
-    // const input = e.target as HTMLInputElement
-    this.propIDArray = i
+    const input = e.target as HTMLInputElement
+    this.propTask = input.id
     // console.log('Deleted id:', this.propIDArray)
-    console.log('Deleted id:', this.propIDArray)
+    console.log('Deleted id:', this.propTask)
   }
 
   handleEditTask() {
@@ -91,6 +140,7 @@ export class TodoListAdvanced extends LitElement {
     // this.stateTasks
     console.log('Cheked')
   }
+
 
   // STYLES
   static styles = css`
