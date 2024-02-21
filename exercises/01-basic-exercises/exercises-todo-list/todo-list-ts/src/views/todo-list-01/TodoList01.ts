@@ -2,8 +2,8 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, state, property, query } from 'lit/decorators.js'
 
-@customElement('todo-list-basic')
-export class TodoListBasic extends LitElement {
+@customElement('todo-list-01')
+export class TodoList01 extends LitElement {
 
   // STATE - PROPS - LIFE CYCLE
   @state()

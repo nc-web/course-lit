@@ -12,8 +12,8 @@ interface ITasks {
 type TypeTasks = ITasks
 
 
-@customElement('todo-list-advanced')
-export class TodoListAdvanced extends LitElement {
+@customElement('todo-list-02')
+export class TodoList02 extends LitElement {
 
   // STATE - PROPS - LIFE CYCLE
   @state()
