@@ -4,16 +4,16 @@ import { Router } from '@vaadin/router'
 import '../my-element'
 
 // Pages
-// import '../views/home/HomeDesktop'
-// import '../views/about/AboutDesktop'
-// import '../views/login/LoginDesktop'
+import '../views/home/HomeDesktop'
+import '../views/about/AboutDesktop'
+import '../views/login/LoginDesktop'
 
 
 const routes = [
 
     { 
         path: '/', 
-        component: 'my-element',
+        component: 'home-desktop',
         children: [
             
         ]

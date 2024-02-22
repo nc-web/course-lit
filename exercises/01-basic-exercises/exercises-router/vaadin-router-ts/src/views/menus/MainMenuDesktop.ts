@@ -15,7 +15,7 @@ export class MainMenuDesktop extends LitElement {
                 </div>
 
                 <nav class='menu__nav'>
-                    <a href='/'>
+                    <a href='${}'>
                         HOME
                     </a>
 
