@@ -2,6 +2,14 @@
 import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
+// Router
+import { Router } from '@vaadin/router'
+import { routes } from '../../../router/routes'
+
+export const router = new Router(document.querySelector('#outlet'))
+router.setRoutes(routes)
+
+
 @customElement('main-menu-desktop')
 export class MainMenuDesktop extends LitElement {
 
@@ -16,27 +24,33 @@ export class MainMenuDesktop extends LitElement {
 
                 <nav class='menu__nav'>
 
-                    <div class='menu__nav_item'>
-                        <div>
-                            <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
+                    <a href='${router.urlForPath('/')}'>
+                        <div class='menu__nav_item'>
+                            <div>
+                                <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
+                            </div>
+                            <small>HOME</small>
                         </div>
-                        <small>INICIO</small>
-                    </div>
-
-                    <div class='menu__nav_item'>
-                        <div>
-                            <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
+                    </a>
+                    
+                    <a href='${router.urlForPath('/todo-list-desktop')}'>
+                        <div class='menu__nav_item'>
+                            <div>
+                                <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
+                            </div>
+                            <small>TODO LIST</small>
                         </div>
-                        <small>TODO LIST</small>
-                    </div>
-
-                    <div class='menu__nav_item'>
-                        <div>
-                            <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
+                    </a>
+                    
+                    <a href='${router.urlForPath('/about')}'>
+                        <div class='menu__nav_item'>
+                            <div>
+                                <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
+                            </div>
+                            <small>ABOUT</small>
                         </div>
-                        <small>ABOUT</small>
-                    </div>
-
+                    </a>
+                    
                 </nav>
 
             </div>

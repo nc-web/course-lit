@@ -13,7 +13,7 @@ export class HomeDesktop extends LitElement {
 
             <main-layout-desktop>
                 <div>
-                    <h2>Main Layout Desktop</h2>
+                    <h4>Home Layout Desktop</h4>
                 </div>
             </main-layout-desktop>
 
