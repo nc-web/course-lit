@@ -1,32 +1,42 @@
 
-import { LitElement, css, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
+// Global Styles
+import './assets/css/global-styles.css'
 
-@customElement('my-element')
-export class MyElement extends LitElement {
+import { Router } from '@vaadin/router'
 
-  render() {
-    return html`
-      <div>
-        <h2>My Element</h2>
-      </div>
-    `
-  }
+// Pages
+import './views/home/HomeDesktop'
+import './views/about/AboutDesktop'
+import './views/login/LoginDesktop'
 
-  static styles = css`
-    
-    :host {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 2rem;
-      text-align: center;
+
+const routes = [
+
+  {
+    path: '/',
+    component: 'home-desktop',
+    children: []
+
+  },
+
+  {
+    path: '/about',
+    component: 'about-desktop',
+    action: async () => {
+      await import('./views/about/AboutDesktop')
     }
+  },
 
-  `
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'my-element': MyElement
+  {
+    path: '/login',
+    component: 'login-desktop',
+    action: async () => {
+      await import('./views/login/LoginDesktop')
+    }
   }
-}
+
+]
+
+const outlet = document.getElementById('outlet')
+export const router = new Router(outlet)
+router.setRoutes(routes)
