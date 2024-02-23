@@ -84,7 +84,7 @@
         "no-unneeded-ternary": "warn",
         "no-useless-call": "warn",
         "no-useless-computed-key": "warn",
-        "no-unused-vars": "error",
+        "no-unused-vars": "warn",
         "no-whitespace-before-property": "warn",
         "no-with": "warn",
         "object-property-newline": "warn",
