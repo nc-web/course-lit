@@ -11,33 +11,31 @@ import '../views/login/LoginDesktop'
 
 const routes = [
 
-    { 
-        path: '/', 
-        component: 'home-desktop',
-        children: [
-            
-        ]
-        
-    },
+  {
+    path: '/',
+    component: 'home-desktop',
+    children: []
 
-    { 
-        path: 'about', 
-        component: 'about-desktop',
-        action: async () => {
-            await import('../views/about/AboutDesktop')
-        }
-    },
+  },
 
-    { 
-        path: 'login', 
-        component: 'login-desktop',
-        action: async () => {
-            await import('../views/login/LoginDesktop')
-        }
-    },
+  {
+    path: 'about',
+    component: 'about-desktop',
+    action: async () => {
+      await import('../views/about/AboutDesktop')
+    }
+  },
+
+  {
+    path: 'login',
+    component: 'login-desktop',
+    action: async () => {
+      await import('../views/login/LoginDesktop')
+    }
+  }
 
 ]
 
-const outlet = document.getElementById('outlet');
-export const router = new Router(outlet);
-router.setRoutes(routes);
+const outlet = document.getElementById('outlet')
+export const router = new Router(outlet)
+router.setRoutes(routes)

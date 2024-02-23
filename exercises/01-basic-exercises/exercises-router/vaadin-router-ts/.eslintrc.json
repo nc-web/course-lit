@@ -6,8 +6,7 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:storybook/recommended"
+        "plugin:@typescript-eslint/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -16,10 +15,6 @@
     },
     "plugins": [
         "@typescript-eslint"
-    ],
-    "ignorePatterns": [
-        "stories",
-        "storybook-static"
     ],
     "rules": {
         "indent": ["error", 2],
@@ -89,7 +84,8 @@
         "no-unneeded-ternary": "warn",
         "no-useless-call": "warn",
         "no-useless-computed-key": "warn",
-        "no-unused-vars": "error",
+        "no-unused-expressions": "warn",
+        "no-unused-vars": "warn",
         "no-whitespace-before-property": "warn",
         "no-with": "warn",
         "object-property-newline": "warn",

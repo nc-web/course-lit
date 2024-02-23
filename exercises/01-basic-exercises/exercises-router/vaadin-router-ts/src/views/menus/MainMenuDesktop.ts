@@ -1,13 +1,16 @@
 
-import { LitElement, html, css  } from 'lit';
+import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
+
+// Router
+import { Router } from '@vaadin/router'
 
 
 @customElement('main-menu-desktop')
 export class MainMenuDesktop extends LitElement {
 
-    render() {
-        return html`
+  render() {
+    return html`
             <div class='menu'>
 
                 <div>
@@ -15,7 +18,7 @@ export class MainMenuDesktop extends LitElement {
                 </div>
 
                 <nav class='menu__nav'>
-                    <a href='${}'>
+                    <a href=''>
                         HOME
                     </a>
 
@@ -30,9 +33,9 @@ export class MainMenuDesktop extends LitElement {
                 
             </div>
         `
-    }
+  }
 
-    static styles = css`
+  static styles = css`
     
         :host {
             display: block;

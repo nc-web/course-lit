@@ -1,5 +1,5 @@
 
-import { LitElement, html, css  } from 'lit';
+import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 // Menu
@@ -9,8 +9,8 @@ import '../views/menus/MainMenuDesktop'
 @customElement('layout-desktop')
 export class LoginDesktop extends LitElement {
 
-    render() {
-        return html`
+  render() {
+    return html`
             <div>
                 <div>
                     <main-menu-desktop></main-menu-desktop>
@@ -21,9 +21,9 @@ export class LoginDesktop extends LitElement {
                 </div>
             </div>
         `
-    }
+  }
 
-    static styles = css`
+  static styles = css`
     
         :host {
             display: block;
