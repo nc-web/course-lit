@@ -9,12 +9,12 @@
 
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["./src/*"],
-      "@/assets/*": ["./src/assets/*"],
-      "@/context/*": ["./src/context/*"],
-      "@/layouts/*": ["./src/layouts/*"],
-      "@/router/*": ["./src/router/*"],
-      "@/views/*": ["./src/views/*"],
+      "@/*": ["/*"],
+      "@/assets/*": ["./assets/*"],
+      "@/context/*": ["./context/*"],
+      "@/layouts/*": ["/layouts/*"],
+      "@/router/*": ["./router/*"],
+      "@/views/*": ["./views/*"],
     },
 
     /* Bundler mode */

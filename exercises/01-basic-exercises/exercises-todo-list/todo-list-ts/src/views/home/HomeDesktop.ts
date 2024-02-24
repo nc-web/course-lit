@@ -3,7 +3,7 @@ import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 // Layout
-import '../../layouts/MainLayoutDesktop'
+import '@layouts/MainLayout'
 
 @customElement('home-desktop')
 export class HomeDesktop extends LitElement {

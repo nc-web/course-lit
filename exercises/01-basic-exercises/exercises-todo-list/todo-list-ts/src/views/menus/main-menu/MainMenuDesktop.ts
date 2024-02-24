@@ -2,14 +2,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-// Router
-import { Router } from '@vaadin/router'
-import { routes } from '../../../router/routes'
-
-export const router = new Router(document.querySelector('#outlet'))
-router.setRoutes(routes)
-
-
 @customElement('main-menu-desktop')
 export class MainMenuDesktop extends LitElement {
 
@@ -24,7 +16,7 @@ export class MainMenuDesktop extends LitElement {
 
                 <nav class='menu__nav'>
 
-                    <a href='${router.urlForPath('/')}'>
+                    <a href='/'>
                         <div class='menu__nav_item'>
                             <div>
                                 <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
@@ -33,7 +25,7 @@ export class MainMenuDesktop extends LitElement {
                         </div>
                     </a>
                     
-                    <a href='${router.urlForPath('/todo-list-desktop')}'>
+                    <a href='/todo-list'>
                         <div class='menu__nav_item'>
                             <div>
                                 <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
@@ -42,7 +34,7 @@ export class MainMenuDesktop extends LitElement {
                         </div>
                     </a>
                     
-                    <a href='${router.urlForPath('/about')}'>
+                    <a href='/about'>
                         <div class='menu__nav_item'>
                             <div>
                                 <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>

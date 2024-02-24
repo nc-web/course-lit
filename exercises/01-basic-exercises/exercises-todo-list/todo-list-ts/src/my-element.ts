@@ -2,23 +2,42 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-
-
 // Global Styels
 import './assets/css/global-styles.css'
 
-// Home
+// Router
+import { Router } from '@lit-labs/router'
+
+// Pages
 import './views/home/HomeDesktop'
-
-
+import './views/todo-list/TodoListsDesktop'
+import './views/about/AboutDesktop'
 
 @customElement('my-element')
 export class MyElement extends LitElement {
 
+  private router = new Router(this, [
+
+    {
+      path: '/',
+      render: () => html`<home-desktop></home-desktop>`
+    },
+
+    {
+      path: '/todo-list',
+      render: () => html`<todo-list-desktop></todo-list-desktop>`
+    },
+
+    {
+      path: '/about',
+      render: () => html`<about-desktop></about-desktop>`
+    }
+
+  ])
+
+
   render() {
-    return html`
-      
-    `
+    return this.router.outlet()
   }
 
 
@@ -27,6 +46,7 @@ export class MyElement extends LitElement {
       display: block
     }
   `
+
 }
 
 declare global {
