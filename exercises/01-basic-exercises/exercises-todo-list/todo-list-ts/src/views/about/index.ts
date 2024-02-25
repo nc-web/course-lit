@@ -19,7 +19,7 @@ export class IndexAbout extends LitElement {
       return html`<about-desktop></about-desktop>`
     }
 
-    return html`Error al cargar el componente`
+    return html`Error loading components`
 
   }
 

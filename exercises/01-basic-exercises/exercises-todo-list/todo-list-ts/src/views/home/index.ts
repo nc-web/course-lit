@@ -19,6 +19,8 @@ export class IndexHome extends LitElement {
       return html`<home-desktop></home-desktop>`
     }
 
+    return html`Loading error components`
+
   }
 
 }
