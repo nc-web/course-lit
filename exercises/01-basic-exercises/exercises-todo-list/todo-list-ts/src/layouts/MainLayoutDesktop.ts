@@ -4,6 +4,7 @@ import { customElement } from 'lit/decorators.js'
 
 // Menus
 import '../views/menus/main-menu/MainMenuDesktop.js'
+import '../views/menus/theme-menu/ThemeMenuDesktop.js'
 
 @customElement('main-layout-desktop')
 export class MainLayoutDesktop extends LitElement {
@@ -12,6 +13,7 @@ export class MainLayoutDesktop extends LitElement {
     return html`
         <div class='layout'>
             <div class='layout__menu'>
+                <theme-menu-desktop></theme-menu-desktop>
                 <main-menu-desktop></main-menu-desktop>
             </div>
 
