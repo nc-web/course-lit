@@ -19,7 +19,7 @@ export class MainLayout extends LitElement {
       return html`<main-layout-desktop></main-layout-desktop>`
     }
 
-    return html`Error al cargar el layout`
+    return html`<h4>Error al cargar el layout</h4>`
 
   }
 

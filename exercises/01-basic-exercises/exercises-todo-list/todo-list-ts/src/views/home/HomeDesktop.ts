@@ -3,21 +3,29 @@ import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 // Layout
-// import '@layouts/MainLayout'
-import '../../layouts/MainLayout'
+// import '@/layouts/MainLayoutDesktop'
+import '../../layouts/MainLayoutDesktop'
+
+// Cards
+import './cards/Card01'
 
 @customElement('home-desktop')
 export class HomeDesktop extends LitElement {
 
   render() {
     return html`
-
-            <main-layout>
-                <div>
-                    <h4>Home Layout Desktop</h4>
+            <main-layout-desktop>
+                <div class='header'>
+                    <h2>TODO LIST'S - TYPESCRIPT</h2>
                 </div>
-            </main-layout>
-
+                
+                <div class='body'>
+                    <card-01></card-01>
+                    <card-01></card-01>
+                    <card-01></card-01>
+                    <card-01></card-01>
+                </div> 
+            </main-layout-desktop>
         `
   }
 
@@ -26,6 +34,23 @@ export class HomeDesktop extends LitElement {
         :host {
             display: block;
         }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+        }
+
+        /* BODY */
+        .body {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: repeat(2, 1fr);
+            text-align: center;
+            gap: 1.5rem;
+            padding: 1rem 2rem;
+        }
+
 
     `
 

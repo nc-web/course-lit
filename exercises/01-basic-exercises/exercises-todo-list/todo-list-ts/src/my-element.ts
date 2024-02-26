@@ -9,6 +9,7 @@ import './assets/css/global-styles.css'
 import { Router } from '@lit-labs/router'
 
 // Pages
+import './views/home/index'
 import './views/home/HomeDesktop'
 import './views/todo-list/TodoListsDesktop'
 import './views/about/AboutDesktop'
@@ -20,7 +21,7 @@ export class MyElement extends LitElement {
 
     {
       path: '/',
-      render: () => html`<home-desktop></home-desktop>`
+      render: () => html`<index-home></index-home>`
     },
 
     {

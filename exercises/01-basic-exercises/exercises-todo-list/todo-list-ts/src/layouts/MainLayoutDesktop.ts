@@ -33,5 +33,6 @@ export class MainLayoutDesktop extends LitElement {
     :host {
         display: block
     }
+
   `
 }
