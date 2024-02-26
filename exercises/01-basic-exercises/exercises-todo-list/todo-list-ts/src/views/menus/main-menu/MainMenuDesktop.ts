@@ -59,6 +59,10 @@ export class MainMenuDesktop extends LitElement {
         padding: 0;
     }
 
+    a {
+        text-decoration: none;
+    }
+
 
     /* MENU */
     .menu {

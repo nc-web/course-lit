@@ -46,6 +46,10 @@ export class ThemeMenuDesktop extends LitElement {
         display: block;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     /* MENU NAV*/
     .menu {
         display: flex;
@@ -56,7 +60,7 @@ export class ThemeMenuDesktop extends LitElement {
     .menu__item {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         margin: 0 .5rem;
         padding: .3rem .5rem;
         border-radius: .5rem;
@@ -74,7 +78,7 @@ export class ThemeMenuDesktop extends LitElement {
         } 
     }
     .menu__item_svg {
-        width: 1.5rem;
+        width: 1rem;
         fill: #FFAB00;
         margin-right: .3rem;
     }
