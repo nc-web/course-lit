@@ -28,7 +28,7 @@ export class MainMenuDesktop extends LitElement {
                     <a href='/todo-list'>
                         <div class='menu__nav_item'>
                             <div>
-                                <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
+                                <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>list-box</title><path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M7 7H9V9H7V7M7 11H9V13H7V11M7 15H9V17H7V15M17 17H11V15H17V17M17 13H11V11H17V13M17 9H11V7H17V9Z" /></svg>
                             </div>
                             <small>TODO LIST</small>
                         </div>
@@ -37,7 +37,7 @@ export class MainMenuDesktop extends LitElement {
                     <a href='/about'>
                         <div class='menu__nav_item'>
                             <div>
-                                <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>
+                                <svg class='menu__nav_item_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>information-slab-circle</title><path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22M11 7H13V9H11V7M14 17H10V15H11V13H10V11H13V15H14V17Z" /></svg>
                             </div>
                             <small>ABOUT</small>
                         </div>
@@ -61,6 +61,14 @@ export class MainMenuDesktop extends LitElement {
 
     a {
         text-decoration: none;
+        
+        &:link {
+            color: #FFFFFF;
+        }
+        
+        &:visited {
+            color: #FFFFFF;
+        }
     }
 
 

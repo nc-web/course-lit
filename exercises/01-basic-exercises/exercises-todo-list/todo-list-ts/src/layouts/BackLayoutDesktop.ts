@@ -5,8 +5,8 @@ import { customElement } from 'lit/decorators.js'
 // Menus
 import '../views/menus/back-menu/BackMenuDesktop'
 
-@customElement('second-layout-desktop')
-export class SecondLayoutDesktop extends LitElement {
+@customElement('back-layout-desktop')
+export class BackLayoutDesktop extends LitElement {
 
   render() {
     return html`

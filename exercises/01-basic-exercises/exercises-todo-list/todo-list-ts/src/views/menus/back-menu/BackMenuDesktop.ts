@@ -37,6 +37,18 @@ export class BackMenuDesktop extends LitElement {
         padding: 0;
     }
 
+    a {
+        text-decoration: none;
+        
+        &:link {
+            color: #FFFFFF;
+        }
+        
+        &:visited {
+            color: #FFFFFF;
+        }
+    }
+
 
     /* MENU */
     .menu {

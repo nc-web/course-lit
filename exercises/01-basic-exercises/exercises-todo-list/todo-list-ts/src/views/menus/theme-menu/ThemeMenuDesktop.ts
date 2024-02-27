@@ -48,6 +48,14 @@ export class ThemeMenuDesktop extends LitElement {
 
     a {
         text-decoration: none;
+        
+        &:link {
+            color: #FFFFFF;
+        }
+        
+        &:visited {
+            color: #FFFFFF;
+        }
     }
 
     /* MENU NAV*/
