@@ -87,7 +87,7 @@ export class ThemeMenuDesktop extends LitElement {
     }
     .menu__item_svg {
         width: 1rem;
-        fill: #FFAB00;
+        fill: #2962FF;
         margin-right: .3rem;
     }
 
