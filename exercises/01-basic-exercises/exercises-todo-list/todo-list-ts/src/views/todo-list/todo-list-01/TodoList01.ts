@@ -70,13 +70,14 @@ export class TodoList01 extends LitElement {
   static styles = css`
     
     :host {
-        display: inline-block;
+        display: block;
     }
 
     .tla {
       display: grid;
       justify-content: center;
       align-items: center;
+      text-align: center;
       padding: 2rem;
     }
 

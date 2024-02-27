@@ -57,7 +57,7 @@ export class Card01 extends LitElement {
         &:hover {
             margin-right: 1rem;
             transform: scale(1.2rem);
-            box-shadow: .1rem .1rem .1rem .1rem rgba(255, 255 ,255, 0.1);
+            box-shadow: .1rem .1rem .1rem .1rem rgba(255, 196 ,0, 0.3);
         }
 
         &:hover .card__body_svg {

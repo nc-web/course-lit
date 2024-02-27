@@ -16,6 +16,7 @@ import './views/about/AboutDesktop'
 
 // Todo List's
 import './views/todo-list/todo-list-01/SectionTodoList01'
+import './views/todo-list/todo-list-02/SectionTodoList02'
 
 @customElement('my-element')
 export class MyElement extends LitElement {
@@ -40,6 +41,11 @@ export class MyElement extends LitElement {
     {
       path: '/todo-list-01',
       render: () => html`<section-todo-list-01></section-todo-list-01>`
+    },
+
+    {
+      path: '/todo-list-02',
+      render: () => html`<section-todo-list-02></section-todo-list-02>`
     }
 
   ])

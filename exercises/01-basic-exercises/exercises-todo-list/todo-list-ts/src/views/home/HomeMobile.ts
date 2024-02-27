@@ -7,7 +7,7 @@ import { customElement } from 'lit/decorators.js'
 import '../../layouts/MainLayoutMobile'
 
 // Cards
-import './cards/Card01'
+import '../todo-list/cards/Card01'
 
 @customElement('home-mobile')
 export class HomeMobile extends LitElement {
