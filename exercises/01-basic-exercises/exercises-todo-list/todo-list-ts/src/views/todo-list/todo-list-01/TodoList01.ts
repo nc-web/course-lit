@@ -4,8 +4,8 @@ import { customElement, state, property, query } from 'lit/decorators.js'
 
 type TypeTasks = {
   id: number,
-  task: string,
-  status: boolean
+  task?: string,
+  status?: boolean
 }
 
 @customElement('todo-list-01')
@@ -54,13 +54,13 @@ export class TodoList01 extends LitElement {
                       </div>
                       
                       <div class='tla__task_items_act'>
-                        <a class='tla__task_items_act_a' @click=${this.removeTask}>
+                        <a class='tla__task_items_act_a' @click=${() => this.removeTask(x.id)}>
                           <svg class='tla__task_items_act_delete' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
                         </a>
-                        <a class='tla__task_items_act_a' @click=${this.editTask}>
+                        <a class='tla__task_items_act_a' @click=${() => this.editTask(x.id)}>
                           <svg class='tla__task_items_act_edit' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pencil</title><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                         </a>
-                        <a class='tla__task_items_act_a' @click=${this.checkTask}>
+                        <a class='tla__task_items_act_a' @click=${() => this.checkTask(x.id)}>
                           <svg class='tla__task_items_act_check' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>check-decagram</title><path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" /></svg>
                         </a>
                       </div>
@@ -98,16 +98,18 @@ export class TodoList01 extends LitElement {
     console.log(this.stateTasks)
   }
 
-  removeTask() {
-    console.log('Remove task')
+  removeTask(id: number) {
+    this.stateTasks = [...this.stateTasks.filter(x => x.id !== id)]
+    // this.requestUpdate()
+    console.log('Task removed', id)
   }
 
-  editTask() {
-    console.log('Edit task')
+  editTask(id: number) {
+    console.log('Edit task', id)
   }
 
-  checkTask() {
-    console.log('Check task')
+  checkTask(id: number) {
+    console.log('Check task', id)
   }
 
 
