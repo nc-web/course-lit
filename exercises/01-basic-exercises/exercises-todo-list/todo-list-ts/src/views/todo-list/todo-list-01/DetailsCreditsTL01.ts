@@ -3,23 +3,40 @@ import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 
-@customElement('credits-tl01')
-export class CreditsTL01 extends LitElement {
+@customElement('details-credits-tl01')
+export class DetailsCreditsTL01 extends LitElement {
 
   render() {
     return html`
-            <header class='header'>
-                <div class='header__title'>
-                    <h2>Creditos</h2>
+            <header class='dc'>
+
+                <div class='dc__details'>
+                    <div class='dc__details_title'>
+                        <h2>Detalles Tecnicos & De Uso</h2>
+                    </div>
+
+                    <div class='dc__details_use'>
+                        <h4>Detalles de uso</h4>
+                        <p>Todo list de entorno grafico basico Con las opciones de Agregar, Editar, Eliminar y Chekear, Con almacenamiento temporal. </p>
+                    </div>
+                    
+                    <div class='dc__details_technicals'>
+                        <h4>Detalles tecnicos</h4>
+                        <p>Todo list hecho con Lit y Typescript, Con vistas responsivas para dispositivos moviles, laptops y pc's. Con un CRUD temporal completo + Chekeo de tareas. Almacenado en memoria temporal.</p>
+                    </div>
                 </div>
 
-                <div class='header__body'>
+                <div class='dc__credits'>
+                    <div class='dc__credits_title'>
+                        <h2>Creditos</h2>
+                    </div>
+
                     <div class='header__body_cont_autor'>
                         <h3 class='header__body_cont_autor_title'>Autor</h3>
                         <p class='header__body_cont_autor_autor'>Andres Giraldo Arenas</p>
                     </div>
 
-                    <div class='header__body_cont_tdetails'>
+                    <div>
                         <h3>Redes & Links del Autor</h3>
                         
                         <div>
@@ -41,22 +58,8 @@ export class CreditsTL01 extends LitElement {
                         <div>
                             <span>Web: </span><a href='http://andresgiraldo.site' target='_blank'><span>www.andresgiraldo.site</span></a>
                         </div>
-                        
-                    </div>
-
-                    <div class='header__body_cont_tdetails'>
-                        <h3>Detalles Tecnicos & De Uso</h3>
-                    </div>
-
-                    <div class='header__body_cont_tdetails'>
-                        <h4>Detalles de uso</h4>
-                        <p>Todo list de entorno grafico basico Con las opciones de Agregar, Editar, Eliminar y Chekear, Con almacenamiento temporal. </p>
-                    </div>
+                    </div>                        
                     
-                    <div class='header__body_cont_tdetails'>
-                        <h4>Detalles tecnicos</h4>
-                        <p>Todo list hecho con Lit y Typescript, Con vistas responsivas para dispositivos moviles, Laptops, PC's. Con un CRUD completo + Chekeo de tarea. Almacenado en memoria temporal.</p>
-                    </div>
                 </div>
             </header>
         `
@@ -80,28 +83,47 @@ export class CreditsTL01 extends LitElement {
         color: #FFFFFF;
     }
 
-    /* HEADER */
-    .header {
+
+    /* DC */
+    .dc {
         display: block;
         justify-content: center;
         align-items: center;
         text-align: center;
         padding: 0 2rem;
     }
-    .header__title {
-        color: #FFAB00;
+
+    
+    /* DC DETAILS */
+    .dc__details{
+        margin: 4rem 0;
     }
-
-
-    /* HEADER TITLE */
     .header__title {
         display: grid;
         justify-content: center;
         align-items: center;
         text-align: center;
     }
+    .dc__details_title {
+        color: #FFAB00;
+    }
+    .dc__details_use {
+        margin: 2rem 0;
+        color: #2962FF;
+    }
+    .dc__details_technicals {
+        margin: 2rem 0;
+        color: #2962FF;
+    }
 
-    /* HEADER BODY */
+
+    /* DC CREDITS */
+    .dc__credits {
+        margin: 4rem 0;
+    }
+    .dc__credits_title {
+        color: #FFAB00;
+    }
     .header__body_cont_autor {
         display: grid;
         justify-content: center;
@@ -111,10 +133,10 @@ export class CreditsTL01 extends LitElement {
     .header__body_cont_autor_title {
         color: #2962FF;
     }
-    .header__body_cont_tdetails {
-        margin: 2rem 0;
-        color: #2962FF;
-    }
+    
+
+
+
 
   `
 
