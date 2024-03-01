@@ -1,5 +1,5 @@
 
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, css, PropertyValueMap } from 'lit'
 import { customElement, state, property, query } from 'lit/decorators.js'
 
 type TypeTasks = {
@@ -28,7 +28,8 @@ export class TodoList01 extends LitElement {
   constructor() {
     super()
 
-    this.stateDivEditTask = false
+    // this.stateDivEditTask = false
+    // this.queryDivEditTask.style.display = 'none'
 
     this.stateTasks = []
     this.propInputTask = ''
@@ -36,7 +37,13 @@ export class TodoList01 extends LitElement {
   }
 
   // connectedCallback() {
-  //   // this.queryDivEditTask.style.display = 'none'
+  //   super.connectedCallback()
+  // }
+
+  // attributeChangedCallback(name: string, _old: string | null, value: string | null): void {
+  // }
+  // updated() {
+  //   this.queryDivEditTask.style.display = 'none'
   // }
 
 
@@ -136,8 +143,8 @@ export class TodoList01 extends LitElement {
   }
 
   editTask(id: number) {
-    const inputEditTask = this.queryDivEditTask
-    inputEditTask.style.display = 'none'
+    const divEditTask = this.queryDivEditTask
+    divEditTask.innerHTML = this.style.display = 'grid'
     this.requestUpdate()
     console.log('Edit task', id)
   }
@@ -260,7 +267,7 @@ export class TodoList01 extends LitElement {
 
     /* EDIT TASKS */
     .tla__edit_tasks {
-      /* display: none; */
+      /* display: none */
     }
     .tla__form_inputEditTask {
       padding: .5rem;
