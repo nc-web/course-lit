@@ -1,32 +1,29 @@
+
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import { consume } from '@lit/context'
+import { customElement } from 'lit/decorators.js'
 
 
-// Logger Context
-import { loggerContext, TypeLogger, ILogger } from './context/logger/logger-context'
-
-// My App
-import './my-app'
+// Components
+import './logger/logger-provider'
+import './logger/logger-consumer'
 
 
 @customElement('my-element')
 export class MyElement extends LitElement {
 
-  @consume({context: loggerContext,
-    subscribe: true})
-  @property({attribute: false})
-  public logger?: ILogger
-
   render() {
     return html`
       <div>
-        <h2>My Element</h2>
-        <p>${this.logger?.log('Marco Giraldo: Consumer')}</p>
-
+        <h2>Lit Context TS</h2>
         <tr></tr>
-
-        <my-app></my-app>
+        <h3>Use 1</h3>
+        <logger-provider>
+          <logger-consumer></logger-consumer>
+        </logger-provider>
+        
+        <h3>Use 2</h3>
+        
+        
       </div>
     `
   }

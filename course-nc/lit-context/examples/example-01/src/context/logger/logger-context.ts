@@ -4,7 +4,7 @@ import {createContext} from '@lit/context'
 // export type {Logger} from 'my-logging-library'
 
 export interface ILogger {
-    log: ( value: string ) => void
+    log: (value: string) => void
 }
 
 export type TypeLogger = ILogger
