@@ -3,7 +3,7 @@ import { createContext } from '@lit/context'
 
 
 // Context Logger 1 - (Definition 1)
-const keyLogger1 = Symbol('ContextKeyLogger1')
+const keyLogger1 = Symbol('contextKeyLogger1')
 export type TypeLogger1 = string
 export const contextLogger1 = createContext<TypeLogger1>(keyLogger1)
 

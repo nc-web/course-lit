@@ -15,14 +15,21 @@ export class MyElement extends LitElement {
     return html`
       <div>
         <h2>Lit Context TS</h2>
-        <tr></tr>
+        
+        <hr>
+
         <h3>Use 1</h3>
         <logger-provider>
           <logger-consumer></logger-consumer>
         </logger-provider>
         
+        <hr>
+        <br/>
+
         <h3>Use 2</h3>
-        
+        <logger-provider propLogger2='Mariana'>
+          <logger-consumer></logger-consumer>
+        </logger-provider>
         
       </div>
     `
