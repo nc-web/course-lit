@@ -1,6 +1,10 @@
 
 import { LitElement, html, css } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
+import { provide } from '@lit/context'
+
+// Context
+import { contextTheme, TypeTheme } from '../context/themes/context-themes.js'
 
 // Menus
 import '../views/menus/main-menu/MainMenuDesktop.js'
@@ -12,6 +16,16 @@ const Logo = new URL('../../public/images/nc-web-logo.png', import.meta.url).hre
 @customElement('main-layout-desktop')
 export class MainLayoutDesktop extends LitElement {
 
+  @provide({context: contextTheme})
+  @property({attribute: true})
+    public propTheme: TypeTheme
+
+  constructor() {
+    super()
+
+    this.propTheme = 'Andres'
+  }
+  
   render() {
     return html`
         <div class='layout'>
