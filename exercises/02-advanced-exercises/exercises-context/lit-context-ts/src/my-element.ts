@@ -1,6 +1,7 @@
 
 import { LitElement, css, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
+// import { provide } from '@lit/context'
 
 // Global Styles
 import './assets/css/global-styles.css'
@@ -12,9 +13,26 @@ import { Router } from '@lit-labs/router'
 import './views/home/HomeDesktop'
 import './views/login/LoginDesktop'
 
+// Context
+// import { contextTheme, TypeTheme } from './context/themes/context-themes.js'
+
+
 @customElement('my-element')
 export class MyElement extends LitElement {
 
+  // // CONTEXT
+  // @provide({context: contextTheme})
+  // @property({attribute: true})
+  //   public propTheme: TypeTheme
+
+  // constructor() {
+  //   super()
+
+  //   this.propTheme = ''
+  // }
+
+
+  // ROUTER
   private router = new Router(this, [
     {
       path: '/',
@@ -36,6 +54,8 @@ export class MyElement extends LitElement {
     :host {
       display: block;
     }
+
+
   `
 }
 

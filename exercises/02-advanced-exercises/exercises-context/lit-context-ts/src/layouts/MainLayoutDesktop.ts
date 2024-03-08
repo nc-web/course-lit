@@ -1,9 +1,10 @@
 
 import { LitElement, html, css } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
+// 
 import { provide } from '@lit/context'
 
-// Context
+// // Context
 import { contextTheme, TypeTheme } from '../context/themes/context-themes.js'
 
 // Menus
@@ -16,6 +17,7 @@ const Logo = new URL('../../public/images/nc-web-logo.png', import.meta.url).hre
 @customElement('main-layout-desktop')
 export class MainLayoutDesktop extends LitElement {
 
+  // CONTEXT
   @provide({context: contextTheme})
   @property({attribute: true})
     public propTheme: TypeTheme
@@ -23,12 +25,12 @@ export class MainLayoutDesktop extends LitElement {
   constructor() {
     super()
 
-    this.propTheme = 'Andres'
+    this.propTheme = 'Andres Giraldo'
   }
   
   render() {
     return html`
-        <div class='layout'>
+        <div class='layout' id='layout'>
             <div class='layout__menu'>
                 <theme-menu-desktop></theme-menu-desktop>
                 <main-menu-desktop></main-menu-desktop>
@@ -55,6 +57,25 @@ export class MainLayoutDesktop extends LitElement {
     `
   }
 
+
+  // LOGIC
+
+  @query('#layout')
+  divElementLayout!: HTMLDivElement
+
+  darkTheme() {
+    
+  }
+
+  lightTheme() {
+
+  }
+
+  systemTheme() {
+
+  }
+
+  // STYLES
   static styles = css`
     
     :host {

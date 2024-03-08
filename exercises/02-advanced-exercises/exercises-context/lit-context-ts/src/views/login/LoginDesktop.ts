@@ -4,6 +4,7 @@ import { customElement, state } from 'lit/decorators.js'
 
 // Layouts
 import '../../layouts/MainLayoutDesktop'
+import '../../layouts/BackLayoutDesktop'
 
 @customElement('login-desktop')
 export class LoginDesktop extends LitElement {

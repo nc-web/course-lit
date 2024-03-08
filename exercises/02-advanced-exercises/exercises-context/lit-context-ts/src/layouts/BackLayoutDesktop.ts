@@ -3,6 +3,8 @@ import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 // Menus
+import '../views/menus/theme-menu/ThemeMenuDesktop.js'
+import '../views/menus/main-menu/MainMenuDesktop.js'
 import '../views/menus/back-menu/BackMenuDesktop'
 
 @customElement('back-layout-desktop')
@@ -12,6 +14,8 @@ export class BackLayoutDesktop extends LitElement {
     return html`
             <div class='layout'>
             <div class='layout__menu'>
+                <theme-menu-desktop></theme-menu-desktop>
+                <main-menu-desktop></main-menu-desktop>
                 <back-menu-desktop></back-menu-desktop>
             </div>
 
