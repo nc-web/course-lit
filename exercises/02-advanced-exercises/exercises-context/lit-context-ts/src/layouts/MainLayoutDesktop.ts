@@ -64,10 +64,14 @@ export class MainLayoutDesktop extends LitElement {
   @query('#layout')
   layoutDivElement!: HTMLDivElement
 
+  @query('body')
+  bodyElement!: HTMLBodyElement
+
   darkTheme() {
 
     this.propTheme = 'dark'
     this.layoutDivElement.style.backgroundColor = '#212121'
+    this.bodyElement.style.backgroundColor = '#212121'
     // if ( this.propTheme === 'dark' ) {
     //   this.layoutDivElement.style.backgroundColor = '#212121'
     // }
