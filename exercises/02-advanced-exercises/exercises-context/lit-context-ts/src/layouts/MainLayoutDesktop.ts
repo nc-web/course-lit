@@ -25,12 +25,13 @@ export class MainLayoutDesktop extends LitElement {
   constructor() {
     super()
 
-    this.propTheme = 'Andres Giraldo'
+    this.propTheme = 'system'
   }
   
   render() {
     return html`
         <div class='layout' id='layout'>
+            <button @click='${this.darkTheme}'>Dark</button>
             <div class='layout__menu'>
                 <theme-menu-desktop></theme-menu-desktop>
                 <main-menu-desktop></main-menu-desktop>
@@ -61,10 +62,15 @@ export class MainLayoutDesktop extends LitElement {
   // LOGIC
 
   @query('#layout')
-  divElementLayout!: HTMLDivElement
+  layoutDivElement!: HTMLDivElement
 
   darkTheme() {
-    
+
+    this.propTheme = 'dark'
+    this.layoutDivElement.style.backgroundColor = '#212121'
+    // if ( this.propTheme === 'dark' ) {
+    //   this.layoutDivElement.style.backgroundColor = '#212121'
+    // }
   }
 
   lightTheme() {
@@ -80,6 +86,7 @@ export class MainLayoutDesktop extends LitElement {
     
     :host {
         display: block;
+        height: 100vh;
     }
 
     .layout__footer {
