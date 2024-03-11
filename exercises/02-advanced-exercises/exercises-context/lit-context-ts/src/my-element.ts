@@ -50,9 +50,12 @@ export class MyElement extends LitElement {
   }
 
 
+  // STYLES
   static styles = css`
     :host {
       display: block;
+      background-color: #FFFFFF;
+      color: #212121;
     }
 
 
