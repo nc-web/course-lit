@@ -25,12 +25,15 @@ export class MainLayoutDesktop extends LitElement {
   constructor() {
     super()
 
-    this.propTheme = 'system'
+    this.propTheme = 'dark'
   }
   
   render() {
-    return html`
-        <div class='layout' id='layout'>
+
+    if (this.propTheme === 'dark') {
+      
+      return html`
+        <div class='layout-dark' id='layout'>
             <button @click='${this.darkTheme}'>Dark</button>
             <div class='layout__menu'>
                 <theme-menu-desktop></theme-menu-desktop>
@@ -55,7 +58,39 @@ export class MainLayoutDesktop extends LitElement {
               
             </div>
         </div>
-    `
+      `
+    } 
+    
+    if (this.propTheme === 'light') {
+      
+      return html`
+        <div class='layout-ligth' id='layout'>
+            <button @click='${this.darkTheme}'>Dark</button>
+            <div class='layout__menu'>
+                <theme-menu-desktop></theme-menu-desktop>
+                <main-menu-desktop></main-menu-desktop>
+            </div>
+
+            <div class='layout__body'>
+                <slot></slot>
+            </div>
+
+            <div class='layout__footer'>
+              
+              <div class='layout__footer_images'>
+                <img src='${Logo}' class='layout__footer_images_logo'/>
+              </div>
+              
+              <div class='layout__footer_nc'>
+                <small>Newsoft Computer</small>
+                <small>www.newsoftcomputer.com</small>
+                <small>info@newsoftcomputer.com</small>  
+              </div>
+              
+            </div>
+        </div>
+      `
+    }
   }
 
 
@@ -88,9 +123,18 @@ export class MainLayoutDesktop extends LitElement {
   // STYLES
   static styles = css`
     
-    :host {
+    :host .layout-dark {
         display: block;
         height: 100vh;
+        background-color: #212121;
+        color: #FFFFFF;
+    }
+
+    :host .layout-light {
+        display: block;
+        height: 100vh;
+        background-color: #FFFFFF;
+        color: #212121;
     }
 
     .layout__footer {

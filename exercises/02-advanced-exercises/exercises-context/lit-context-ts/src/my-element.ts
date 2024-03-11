@@ -50,11 +50,20 @@ export class MyElement extends LitElement {
   }
 
 
+  // LOGIC
+  darkTheme() {
+
+    this.style.backgroundColor = '#212121';
+    this.style.color= '#FFFFFF';
+    
+  }
+
+
   // STYLES
   static styles = css`
     :host {
       display: block;
-      background-color: #212121;
+      background: var(--theme-dark-bg-color);
       color: #FFFFFF;
     }
 
