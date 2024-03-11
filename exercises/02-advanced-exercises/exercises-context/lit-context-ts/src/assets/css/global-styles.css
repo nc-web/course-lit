@@ -21,23 +21,6 @@ body {
 }
 
 
-/* THEME */
-/* Dark */
-/* body {
-  color: beige;
-  background-color: #212121;
-} */
-
-/* Light */
-/* body {
-  color: beige;
-  background-color: #212121;
-} */
-
-a {
-  text-decoration: none;
-}
-
 @media screen and (max-width: 1440px) {
 
   html,
