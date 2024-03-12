@@ -16,20 +16,23 @@ import './views/login/LoginDesktop'
 // Context
 // import { contextTheme, TypeTheme } from './context/themes/context-themes.js'
 
+// Utils
+// import { osPlatform } from './assets/utils/os'
 
 @customElement('my-element')
 export class MyElement extends LitElement {
-
+  
   // // CONTEXT
   // @provide({context: contextTheme})
   // @property({attribute: true})
   //   public propTheme: TypeTheme
 
-  // constructor() {
-  //   super()
+  constructor() {
+    super()
 
-  //   this.propTheme = ''
-  // }
+    // this.propTheme = ''
+    // console.log(osPlatform)
+  }
 
 
   // ROUTER
@@ -63,8 +66,6 @@ export class MyElement extends LitElement {
   static styles = css`
     :host {
       display: block;
-      background: var(--theme-dark-bg-color);
-      color: #FFFFFF;
     }
 
     a {
