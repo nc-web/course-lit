@@ -55,11 +55,13 @@ export class MainMenuDesktop extends LitElement {
         text-decoration: none;
         
         &:link {
-            color: #FFFFFF;
+            text-decoration: none;
+            color: #78909C;
         }
         
         &:visited {
-            color: #FFFFFF;
+            text-decoration: none;
+            color: #78909C;
         }
     }
 
