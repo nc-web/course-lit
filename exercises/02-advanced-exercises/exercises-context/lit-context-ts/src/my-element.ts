@@ -7,7 +7,7 @@ import { customElement, property } from 'lit/decorators.js'
 import './assets/css/global-styles.css'
 
 // Router
-import { Router } from '@lit-labs/router'
+import { Router, Routes } from '@lit-labs/router'
 
 // Pages
 import './views/home/HomeDesktop'
@@ -30,7 +30,7 @@ export class MyElement extends LitElement {
   constructor() {
     super()
 
-    // this.propTheme = ''
+    // this.propTheme = 'dark'
     // console.log(osPlatform)
   }
 
@@ -39,7 +39,7 @@ export class MyElement extends LitElement {
   private router = new Router(this, [
     {
       path: '/',
-      render: () => html`<home-desktop></home-desktop>`
+      render: () => html`<home-desktop></home-desktop>`,
     },
 
     {
