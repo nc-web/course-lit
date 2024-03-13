@@ -1,23 +1,10 @@
 
 import { LitElement, html, css } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
-import { consume } from '@lit/context'
+import { customElement, property, state } from 'lit/decorators.js'
 
-// Context
-import { contextTheme, TypeTheme } from '../../../context/themes/context-themes'
 
 @customElement('main-menu-desktop')
 export class MainMenuDesktop extends LitElement {
-
-   @consume({ context: contextTheme, subscribe: true })
-   @state()
-    private stateTheme: TypeTheme
-
-    constructor() {
-        super()
-
-        this.stateTheme = ''
-    }
 
   render() {
     return html`
@@ -26,7 +13,6 @@ export class MainMenuDesktop extends LitElement {
                 <div class='menu__company'>
                         <svg class='menu__company_svg' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>format-list-bulleted-type</title><path d="M5,9.5L7.5,14H2.5L5,9.5M3,4H7V8H3V4M5,20A2,2 0 0,0 7,18A2,2 0 0,0 5,16A2,2 0 0,0 3,18A2,2 0 0,0 5,20M9,5V7H21V5H9M9,19H21V17H9V19M9,13H21V11H9V13Z" /></svg>
                     <p>TODO LIST's - TS </p>
-                    <p>${this.stateTheme}</p>
                 </div>
 
                 <nav class='menu__nav'>

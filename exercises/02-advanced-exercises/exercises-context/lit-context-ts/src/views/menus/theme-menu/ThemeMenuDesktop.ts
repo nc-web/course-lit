@@ -1,11 +1,6 @@
 
 import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { provide } from '@lit/context'
-
-// Contexts
-import { contextTheme, TypeTheme } from '../../../context/themes/context-themes'
-
 
 
 @customElement('theme-menu-desktop')
