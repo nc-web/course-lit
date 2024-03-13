@@ -1,6 +1,7 @@
 
 import { LitElement, html, css } from 'lit'
 
+
 export class Component02 extends LitElement {
 
   render() {
