@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit'
-import { customElement, property, state, query } from 'lit/decorators.js'
+import { customElement, state } from 'lit/decorators.js'
 import { consume } from '@lit/context'
 
 // Context
@@ -126,7 +126,7 @@ export class MainLayoutDesktop extends LitElement {
         background-color: #EEEEEE;
         color: #212121;
 
-        & a {
+        /* & a {
           text-decoration: none;
           color: #212121;
 
@@ -139,7 +139,7 @@ export class MainLayoutDesktop extends LitElement {
             text-decoration: none;
             color: #212121;
           }
-        }
+        } */
 
         
     }
