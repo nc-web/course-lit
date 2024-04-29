@@ -9,11 +9,12 @@ import '../../../layouts/MainLayoutDesktop'
 import '../menus/BackMenuTLDesktop'
 
 // Components
-import './HeaderTL02'
-import './TodoList02'
+import './TodoList03'
+import './DetailsCreditsTL03'
 
-@customElement('section-todo-list-02')
-export class SectionTodoList02 extends LitElement {
+
+@customElement('section-todo-list-03')
+export class SectionTodoList03 extends LitElement {
 
   render() {
     return html`
@@ -21,8 +22,8 @@ export class SectionTodoList02 extends LitElement {
                 <div>
                   <back-menu-tl-desktop></back-menu-tl-desktop>
                 </div>
-                <header-tl02></header-tl02>
-                <todo-list-02></todo-list-02>
+                <todo-list-03></todo-list-03>
+                <details-credits-tl03></details-credits-tl03>
             </main-layout-desktop>
         `
   }
