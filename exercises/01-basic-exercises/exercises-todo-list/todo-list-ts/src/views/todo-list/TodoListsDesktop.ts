@@ -11,6 +11,8 @@ import './menus/BackMenuTLDesktop'
 // Cards
 import './cards/Card01'
 import './cards/Card02'
+import './cards/Card03'
+import './cards/Card04'
 
 @customElement('todo-list-desktop')
 export class TodoListDesktop extends LitElement {
@@ -26,8 +28,8 @@ export class TodoListDesktop extends LitElement {
                 <div class='body'>
                     <card-01></card-01>
                     <card-02></card-02>
-                    <card-01></card-01>
-                    <card-01></card-01>
+                    <card-03></card-03>
+                    <card-04></card-04>
                 </div> 
               
             </main-layout-desktop>

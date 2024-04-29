@@ -17,6 +17,8 @@ import './views/about/AboutDesktop'
 // Todo List's
 import './views/todo-list/todo-list-01/SectionTodoList01'
 import './views/todo-list/todo-list-02/SectionTodoList02'
+import './views/todo-list/todo-list-03/SectionTodoList03'
+import './views/todo-list/todo-list-04/SectionTodoList04'
 
 @customElement('my-element')
 export class MyElement extends LitElement {
@@ -46,6 +48,16 @@ export class MyElement extends LitElement {
     {
       path: '/todo-list-02',
       render: () => html`<section-todo-list-02></section-todo-list-02>`
+    },
+
+    {
+      path: '/todo-list-03',
+      render: () => html`<section-todo-list-03></section-todo-list-03>`
+    },
+
+    {
+      path: '/todo-list-04',
+      render: () => html`<section-todo-list-04></section-todo-list-04>`
     }
 
   ])
