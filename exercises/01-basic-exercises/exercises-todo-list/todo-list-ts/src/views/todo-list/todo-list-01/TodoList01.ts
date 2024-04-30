@@ -18,22 +18,9 @@ export class TodoList01 extends LitElement {
   constructor() {
     super()
 
-    // this.stateDivEditTask = false
-    // this.queryDivEditTask.style.display = 'none'
-
     this.stateTasks = []
     this.propInputTask = ''
   }
-
-  // connectedCallback() {
-  //   super.connectedCallback()
-  // }
-
-  // attributeChangedCallback(name: string, _old: string | null, value: string | null): void {
-  // }
-  // updated() {
-  //   this.queryDivEditTask.style.display = 'none'
-  // }
 
 
   // VIEWS
@@ -42,7 +29,7 @@ export class TodoList01 extends LitElement {
             <section class='tla'> 
                 <!-- Header -->
                 <div class='tla__header'>
-                  <h2 class='tla__header_title'>TODO LIST BASIC - TS</h2>
+                  <h2 class='tla__header_title'>TODO LIST TS 01 - BASIC - ARRAYS</h2>
                 </div>
 
                 <!-- Form -->

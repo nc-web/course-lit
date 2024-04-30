@@ -54,7 +54,7 @@ export class TodoList02 extends LitElement {
                 
                 <!-- Header -->
                 <div class='tla__header'>
-                  <h2 class='tla__header_title'>TODO LIST BASIC - TS</h2>
+                  <h2 class='tla__header_title'>TODO LIST TS 02 - BASIC - OBJECTS ARRAYS</h2>
                 </div>
 
                 <!-- Form -->
