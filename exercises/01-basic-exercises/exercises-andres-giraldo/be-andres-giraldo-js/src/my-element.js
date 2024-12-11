@@ -5,7 +5,7 @@ export class MyElement extends LitElement {
   render() {
     return html`
       <div>
-
+        <h1>Home</h1>
       </div>
     `
   }
