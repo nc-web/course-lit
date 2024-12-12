@@ -45,11 +45,11 @@ export class MenuComponent extends LitElement {
   }
 
   toggleMenu() {
-    this.isOpen = !this.isOpen;
+    this.isOpen = !this.isOpen
   }
 
   toggleSubmenu(item) {
-    this.activeSubmenu = this.activeSubmenu === item ? null : item;
+    this.activeSubmenu = this.activeSubmenu === item ? null : item
   }
 
   render() {
