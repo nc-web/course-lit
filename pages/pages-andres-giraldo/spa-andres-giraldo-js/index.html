@@ -5,12 +5,20 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>spa-andres-giraldo-js</title>
-    <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/assets/css/global-styles.css">
+
   </head>
   <body>
-    <my-element>
-      <h1>Vite + Lit</h1>
-    </my-element>
+
+  <my-page-andres-js></my-page-andres-js>
+
+  <!-- Components -->
+  <script type="module" src="./src/my-element.js"></script>
+  <script type='module' src="./src/views/nav/index.js"></script>
+  <script type='module' src="./src/views/header/index.js"></script>
+  <script type='module' src="./src/views/header/HeaderDesktop.js"></script>
+  <script type='module' src="./src/views/studies/StudiesDesktop.js"></script>
   </body>
 </html>
