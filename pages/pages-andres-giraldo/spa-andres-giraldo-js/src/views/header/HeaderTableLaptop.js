@@ -4,10 +4,10 @@ import { LitElement, html, css } from 'lit';
 import './cards/Card01.js';
 
 // Images
-const HTML5 = new URL('../../../assets/img/html5.png', import.meta.url).href;
-const CSS3 = new URL('../../../assets/img/css3.png', import.meta.url).href;
-const JS = new URL('../../../assets/img/javascript.png', import.meta.url).href;
-const React = new URL('../../../assets/img/react.png', import.meta.url).href;
+const HTML5 = new URL('../../assets/img/html5.png', import.meta.url).href;
+const CSS3 = new URL('../../assets/img/css3.png', import.meta.url).href;
+const JS = new URL('../../assets/img/javascript.png', import.meta.url).href;
+const React = new URL('../../assets/img/react.png', import.meta.url).href;
 
 export class HeaderTableLaptop extends LitElement {
   render() {
@@ -48,7 +48,7 @@ export class HeaderTableLaptop extends LitElement {
       height: 50rem;
       margin: 0;
       padding: 0;
-      background: url('assets/img/background-01.webp');
+      background: url('../../assets/img/background-01.webp');
       // filter: blur(2px);
     }
 

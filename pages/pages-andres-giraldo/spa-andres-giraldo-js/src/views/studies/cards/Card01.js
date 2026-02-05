@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 
 // Images
-const Profile = new URL('../../../../assets/img/andres-01.png', import.meta.url)
+const Profile = new URL('../../../assets/img/andres-01.png', import.meta.url)
   .href;
 
 export class CardStudies01 extends LitElement {

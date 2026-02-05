@@ -2,7 +2,7 @@
 import { LitElement, html, css } from 'lit';
 
 // Images
-const Logo = new URL('../../../assets/img/logo128.png', import.meta.url).href;
+const Logo = new URL('../../assets/img/logo128.png', import.meta.url).href;
 
 export class NavDesktop extends LitElement {
   render() {
