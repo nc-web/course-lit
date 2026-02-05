@@ -12,6 +12,7 @@ import './views/studies/index.js';
  * @csspart button - The button
  */
 export class MyElement extends LitElement {
+  
   static get properties() {
     return {
       /**
