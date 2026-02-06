@@ -4,7 +4,7 @@ import { LitElement, css, html } from 'lit'
 // Components
 import './nav/index.js'
 import './home/index'
-import './calculator01/calculator01.js'
+import './calculator01/Calculator01'
 
 /**
  * An example element.
