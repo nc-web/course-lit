@@ -13,6 +13,7 @@ export class Calculator01 extends LitElement {
     this.stateCurrent = 0
     this.stateDisplayTop = 0
     this.stateDisplayBottom = 0
+    this.stateInitEnd = false
   }
 
   render () {
@@ -63,8 +64,13 @@ export class Calculator01 extends LitElement {
 
   handleButton (e) {
     e.preventDefault()
-    this.stateCurrent += e.target.name
-    this.stateDisplayBottom = this.stateCurrent
+    if (this.stateInitEnd === false) {
+      this.stateCurrent += e.target.name
+      this.stateDisplayBottom = this.stateCurrent
+    } else {
+      this.handleClear(e)
+    }
+    
   }
 
   handleClear (e) {
@@ -72,6 +78,7 @@ export class Calculator01 extends LitElement {
     this.stateCurrent = 0
     this.stateDisplayTop = 0
     this.stateDisplayBottom = 0
+    this.stateInitEnd = false
   }
 
   handleBack (e) {
@@ -86,6 +93,9 @@ export class Calculator01 extends LitElement {
     console.log('Valor: ', temp)
     // this.stateDisplayTop = Function(temp)
     // this.stateCurrent = 0
+
+    this.stateDisplayBottom = temp
+    this.stateInitEnd = true
   }
 
   static styles = css`
