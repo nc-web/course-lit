@@ -4,15 +4,15 @@ import { html, css, LitElement } from 'lit'
 export class Calculator01 extends LitElement {
   static properties = {
     stateCurrent: { type: Number },
-    stateDisplayTop: { type: Number },
-    stateDisplayBottom: { type: Number }
+    stateDisplayResult: { type: Number },
+    stateDisplayCalc: { type: Number }
   }
 
   constructor () {
     super()
-    this.stateCurrent = 0
-    this.stateDisplayTop = 0
-    this.stateDisplayBottom = 0
+    this.stateCurrent = ''
+    this.stateDisplayCalc = ''
+    this.stateDisplayResult = 0
     this.stateInitEnd = false
   }
 
@@ -20,8 +20,8 @@ export class Calculator01 extends LitElement {
     return html`
       <article class="calc">
         <div class="calc__display">
-            <h1 class="calc__display-top">${this.stateDisplayTop}</h1>
-            <h4 class="calc__display-bottom">${this.stateDisplayBottom}</h4>
+            <h4 class="calc__display-bottom">${this.stateDisplayCalc}</h4>
+            <h1 class="calc__display-top">${this.stateDisplayResult}</h1>
         </div>
 
         <div class="calc__b">
@@ -65,8 +65,9 @@ export class Calculator01 extends LitElement {
   handleButton (e) {
     e.preventDefault()
     if (this.stateInitEnd === false) {
+      // this.handleBack(e)
       this.stateCurrent += e.target.name
-      this.stateDisplayBottom = this.stateCurrent
+      this.stateDisplayCalc = this.stateCurrent
     } else {
       this.handleClear(e)
     }
@@ -75,26 +76,30 @@ export class Calculator01 extends LitElement {
 
   handleClear (e) {
     e.preventDefault()
-    this.stateCurrent = 0
-    this.stateDisplayTop = 0
-    this.stateDisplayBottom = 0
+    this.stateCurrent = ''
+    this.stateDisplayCalc = ''
+    this.stateDisplayResult = 0
     this.stateInitEnd = false
+
+    this.stateCurrent += e.target.name
+    this.stateDisplayCalc = this.stateCurrent
   }
 
   handleBack (e) {
     e.preventDefault()
     this.stateCurrent = this.stateCurrent.slice(0, this.stateCurrent.length - 1)
-    this.stateDisplayBottom = this.stateCurrent
+    this.stateDisplayCalc = this.stateCurrent
   }
 
   handleEqual (e) {
     e.preventDefault()
     const temp = eval(this.stateCurrent.toString())
     console.log('Valor: ', temp)
-    // this.stateDisplayTop = Function(temp)
+    // this.stateDisplayResult = Function(temp)
     // this.stateCurrent = 0
 
-    this.stateDisplayBottom = temp
+    // this.stateDisplayCalc = ''
+    this.stateDisplayResult = temp
     this.stateInitEnd = true
   }
 
