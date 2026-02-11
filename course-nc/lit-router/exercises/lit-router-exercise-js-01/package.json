@@ -1,5 +1,5 @@
 {
-  "name": "example-js",
+  "name": "lit-router-exercise-js-01",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "lit": "^3.3.2"
+    "lit": "^3.3.1"
   },
   "devDependencies": {
     "vite": "^7.3.1"
