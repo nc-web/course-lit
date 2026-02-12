@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { Router } from '@vaadin/router';
+// import { Router } from '@vaadin/router';
 import { routes } from '../../../router/routes.js';
 
 // Router

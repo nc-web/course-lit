@@ -1,5 +1,4 @@
 import { LitElement, css, html } from 'lit'
-import { Router } from '@lit-labs/router'
 
 import './main-menu.js';
 
