@@ -11,15 +11,15 @@
     "lint-fix": "eslint --fix ."
   },
   "dependencies": {
-    "@lit-labs/scoped-registry-mixin": "^1.0.3",
-    "@webcomponents/scoped-custom-element-registry": "^0.0.9",
-    "lit": "^3.1.2"
+    "@lit-labs/scoped-registry-mixin": "^1.0.4",
+    "@webcomponents/scoped-custom-element-registry": "^0.0.10",
+    "lit": "^3.3.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "eslint": "^8.57.0",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4"
+    "vite": "^7.3.1"
   }
 }
