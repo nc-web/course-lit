@@ -1,16 +1,16 @@
 import { LitElement, css, html } from 'lit'
 
-import './father-slot'
+import './component-slot'
 export class MyElement extends LitElement {
   
   render() {
     return html`
       <div>
-        <father-slot>
+        <component-slot>
           <h4>
-            This is the child, and we're inside the parent's slot / Este es el hijo y nosotros estamos dentro del slot del padre.
+            Here we are inside the component slot. / Aqui estamos dentro del slot del componente.
           </h4>          
-        </father-slot>
+        </component-slot>
       </div>
     `
   }

@@ -1,13 +1,13 @@
 import { LitElement, css, html } from 'lit'
 
-import './father-slot'
+import './component-slot'
 
 export class MyElement extends LitElement {
   
   render() {
     return html`
       <div>
-        <father-slot></father-slot>
+        <component-slot></component-slot>
       </div>
     `
   }
