@@ -10,7 +10,6 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/pages'),
       '@templates': path.resolve(__dirname, './src/templates'),
       '@views': path.resolve(__dirname, './src/views'),
-      
     },
   },
 });
