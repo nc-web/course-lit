@@ -2,6 +2,7 @@
 import { html, css, LitElement } from 'lit'
 
 export class Calculator01 extends LitElement {
+  
   static properties = {
     stateCurrent: { type: Number },
     stateDisplayResult: { type: Number },
